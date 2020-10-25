@@ -1,0 +1,6 @@
+app/*
+devops*
+node_modules*
+playground.*
+webpack.config.*
+styles/*

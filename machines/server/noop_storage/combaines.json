@@ -1,0 +1,1927 @@
+[
+  {
+    "machine_title": "Комбайн (Versatile RT490) Versatile RT490",
+    "price": "99795",
+    "weight": "3834",
+    "height": "6687",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн (Foton) DC200",
+    "price": "63634",
+    "weight": "8894",
+    "height": "5667",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн (Foton) DG200",
+    "price": "34836",
+    "weight": "9945",
+    "height": "6888",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн (Foton) GE20D",
+    "price": "96464",
+    "weight": "5875",
+    "height": "6383",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн (Foton) GE20H",
+    "price": "94533",
+    "weight": "7664",
+    "height": "5873",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн (Foton) GF28",
+    "price": "97853",
+    "weight": "3396",
+    "height": "4698",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн (Foton) GF38",
+    "price": "64999",
+    "weight": "7994",
+    "height": "3556",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн (Foton) GN60",
+    "price": "94337",
+    "weight": "4839",
+    "height": "8985",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CX 8000) СХ8030",
+    "price": "47366",
+    "weight": "7783",
+    "height": "4599",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CX 8000) СХ8040",
+    "price": "78735",
+    "weight": "4446",
+    "height": "3567",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CX 8000) СХ8050",
+    "price": "36654",
+    "weight": "8864",
+    "height": "5479",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CX 8000) СХ8060",
+    "price": "63598",
+    "weight": "5896",
+    "height": "9487",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CX 8000) СХ8070",
+    "price": "94444",
+    "weight": "8338",
+    "height": "7854",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CX 8000) СХ8080",
+    "price": "96765",
+    "weight": "4993",
+    "height": "7769",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CX 8000) СХ8090",
+    "price": "47963",
+    "weight": "9695",
+    "height": "9643",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TC 56) TC 56",
+    "price": "79486",
+    "weight": "3897",
+    "height": "6977",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CR 9000) CR9040",
+    "price": "35756",
+    "weight": "9634",
+    "height": "6639",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CR 9000) CR9060",
+    "price": "74389",
+    "weight": "3337",
+    "height": "7968",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CR 9000) CR9070",
+    "price": "64446",
+    "weight": "3755",
+    "height": "9694",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CR 9000) CR9080",
+    "price": "84658",
+    "weight": "9776",
+    "height": "8959",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CR 9000) CR9090",
+    "price": "78343",
+    "weight": "3359",
+    "height": "9968",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CSX 7000) CSX 7040",
+    "price": "96946",
+    "weight": "6987",
+    "height": "7678",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CSX 7000) CSX 7050",
+    "price": "69959",
+    "weight": "5664",
+    "height": "4345",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CSX 7000) CSX 7060",
+    "price": "46839",
+    "weight": "4374",
+    "height": "4365",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CSX 7000) CSX 7070",
+    "price": "94884",
+    "weight": "7445",
+    "height": "6569",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CSX 7000) CSX 7080",
+    "price": "55585",
+    "weight": "6468",
+    "height": "7655",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TX (Plus)) TX62",
+    "price": "59796",
+    "weight": "6358",
+    "height": "9534",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TX (Plus)) TX63",
+    "price": "83465",
+    "weight": "9777",
+    "height": "8964",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TX (Plus)) TX64 Plus",
+    "price": "73859",
+    "weight": "6459",
+    "height": "6978",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TX (Plus)) TX65 Plus",
+    "price": "46965",
+    "weight": "3349",
+    "height": "7759",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TX (Plus)) TX66",
+    "price": "74869",
+    "weight": "7837",
+    "height": "4439",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TX (Plus)) TX67",
+    "price": "37674",
+    "weight": "3689",
+    "height": "7987",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TX (Plus)) TX68",
+    "price": "37776",
+    "weight": "5848",
+    "height": "8338",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TX (Plus)) TX68Plus",
+    "price": "59477",
+    "weight": "6479",
+    "height": "3889",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Tuсano) Tucano 320",
+    "price": "77373",
+    "weight": "3936",
+    "height": "8486",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Tuсano) Tucano 330",
+    "price": "78744",
+    "weight": "5374",
+    "height": "3637",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Tuсano) Tucano 340",
+    "price": "64773",
+    "weight": "6344",
+    "height": "9544",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Tuсano) Tucano 430",
+    "price": "55366",
+    "weight": "3979",
+    "height": "7476",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Tuсano) Tucano 440",
+    "price": "66488",
+    "weight": "8938",
+    "height": "7853",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Tuсano) Tucano 450",
+    "price": "75637",
+    "weight": "9896",
+    "height": "6664",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TC5000) TC5040",
+    "price": "87768",
+    "weight": "3779",
+    "height": "6789",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TC5000) TC5050",
+    "price": "58977",
+    "weight": "5559",
+    "height": "5774",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TC5000) TC5060",
+    "price": "75787",
+    "weight": "9735",
+    "height": "7844",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TC5000) TC5070",
+    "price": "85495",
+    "weight": "5553",
+    "height": "4856",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland TC5000) TC5080",
+    "price": "48855",
+    "weight": "4996",
+    "height": "6366",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (NOVA) NOVA",
+    "price": "98347",
+    "weight": "9543",
+    "height": "9687",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Beta) 7260",
+    "price": "38855",
+    "weight": "8834",
+    "height": "6778",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Beta) 7270",
+    "price": "34576",
+    "weight": "9457",
+    "height": "9879",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Activa) 7244",
+    "price": "84997",
+    "weight": "9557",
+    "height": "9333",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Activa) 7245",
+    "price": "37378",
+    "weight": "5965",
+    "height": "4473",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Activa) 7246",
+    "price": "76374",
+    "weight": "5793",
+    "height": "9574",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt 8000) 8300",
+    "price": "93348",
+    "weight": "6899",
+    "height": "5445",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt 8000) 8350",
+    "price": "65459",
+    "weight": "5894",
+    "height": "8589",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Cerea) 7274",
+    "price": "59537",
+    "weight": "7579",
+    "height": "9778",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Cerea) 7278",
+    "price": "59475",
+    "weight": "6479",
+    "height": "3785",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-970) Енисей-970",
+    "price": "69938",
+    "weight": "7376",
+    "height": "7998",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-960) Агромаш 4101",
+    "price": "57973",
+    "weight": "8486",
+    "height": "6937",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-960) Агромаш 4111",
+    "price": "73894",
+    "weight": "4754",
+    "height": "7585",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-960) Агромаш 4121",
+    "price": "67755",
+    "weight": "9554",
+    "height": "7649",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-960) Агромаш 4221",
+    "price": "59586",
+    "weight": "4577",
+    "height": "3333",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-960) Енисей-960",
+    "price": "48557",
+    "weight": "5745",
+    "height": "3966",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-960) Енисей-967",
+    "price": "46569",
+    "weight": "3485",
+    "height": "6447",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-950) Агромаш 3101",
+    "price": "64775",
+    "weight": "4454",
+    "height": "6389",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-950) Агромаш 3111",
+    "price": "76776",
+    "weight": "5354",
+    "height": "5476",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-950) Агромаш 3121",
+    "price": "87539",
+    "weight": "6784",
+    "height": "9644",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-950) Енисей-950",
+    "price": "93739",
+    "weight": "9879",
+    "height": "3939",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-950) Енисей-952",
+    "price": "35686",
+    "weight": "8937",
+    "height": "5568",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-950) Енисей-954",
+    "price": "34986",
+    "weight": "3695",
+    "height": "3467",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-950) Енисей-956",
+    "price": "58343",
+    "weight": "3444",
+    "height": "8875",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-950) Енисей-957",
+    "price": "35486",
+    "weight": "6876",
+    "height": "8969",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-950) Енисей-958",
+    "price": "33538",
+    "weight": "8459",
+    "height": "7948",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-950) Енисей-959",
+    "price": "49543",
+    "weight": "8374",
+    "height": "8769",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (YTO) 2090A1",
+    "price": "64459",
+    "weight": "3499",
+    "height": "5683",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (YTO) 3110",
+    "price": "76839",
+    "weight": "3545",
+    "height": "5553",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (YTO) 4LZ-2.5",
+    "price": "47585",
+    "weight": "3638",
+    "height": "3657",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Essil КЗС-740) КЗС-740",
+    "price": "44746",
+    "weight": "9855",
+    "height": "8834",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 200",
+    "price": "99697",
+    "weight": "5897",
+    "height": "4587",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 300",
+    "price": "97639",
+    "weight": "4748",
+    "height": "5647",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 300 MCS",
+    "price": "99366",
+    "weight": "5578",
+    "height": "5675",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 310",
+    "price": "64569",
+    "weight": "6353",
+    "height": "5756",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 310 MCS",
+    "price": "68948",
+    "weight": "8796",
+    "height": "5896",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 400 ADV",
+    "price": "58436",
+    "weight": "4759",
+    "height": "4559",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 400 ADV LC",
+    "price": "93335",
+    "weight": "3845",
+    "height": "9735",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 400 ADV LCI",
+    "price": "59375",
+    "weight": "3563",
+    "height": "3463",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 400 ADV RICE",
+    "price": "96785",
+    "weight": "5877",
+    "height": "5683",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 410 ADV",
+    "price": "77763",
+    "weight": "7997",
+    "height": "4699",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 410 ADV LC",
+    "price": "75795",
+    "weight": "7436",
+    "height": "6935",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M) M 410 ADV RICE",
+    "price": "38744",
+    "weight": "9769",
+    "height": "8637",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Добрыня-1500) Добрыня-1500M",
+    "price": "94794",
+    "weight": "7557",
+    "height": "6577",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere S-серия) S650",
+    "price": "44859",
+    "weight": "5685",
+    "height": "6548",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere S-серия) S660",
+    "price": "89384",
+    "weight": "5468",
+    "height": "9873",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere S-серия) S670",
+    "price": "47944",
+    "weight": "3473",
+    "height": "5554",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere S-серия) S680",
+    "price": "93963",
+    "weight": "7577",
+    "height": "3834",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere S-серия) S690",
+    "price": "48479",
+    "weight": "4784",
+    "height": "3358",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Acros) Acros 530",
+    "price": "74559",
+    "weight": "5766",
+    "height": "4656",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Acros) Acros 535",
+    "price": "45745",
+    "weight": "7596",
+    "height": "3555",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Acros) Acros 540",
+    "price": "35368",
+    "weight": "8945",
+    "height": "7444",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Acros) Acros 550",
+    "price": "33937",
+    "weight": "4944",
+    "height": "7498",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Acros) Acros 560",
+    "price": "39747",
+    "weight": "7943",
+    "height": "8438",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Acros) Acros 580",
+    "price": "56637",
+    "weight": "5574",
+    "height": "3538",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Acros) Acros 585",
+    "price": "38759",
+    "weight": "3954",
+    "height": "5978",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Acros) Acros 595 Plus",
+    "price": "45798",
+    "weight": "4893",
+    "height": "4544",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (RSM 161) RSM 161",
+    "price": "99778",
+    "weight": "8385",
+    "height": "8389",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere T серия) Т 550",
+    "price": "83394",
+    "weight": "4568",
+    "height": "8858",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere T серия) Т 560",
+    "price": "84973",
+    "weight": "7798",
+    "height": "8444",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere T серия) Т 660",
+    "price": "53545",
+    "weight": "5456",
+    "height": "5733",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere T серия) Т 670",
+    "price": "89864",
+    "weight": "9999",
+    "height": "6994",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 54) 5435H",
+    "price": "55773",
+    "weight": "5538",
+    "height": "8334",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 54) 5445H",
+    "price": "36534",
+    "weight": "3493",
+    "height": "3735",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 54) 5465H",
+    "price": "97875",
+    "weight": "3889",
+    "height": "8737",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 54) 5485HT",
+    "price": "68389",
+    "weight": "4896",
+    "height": "4876",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 56) 5650 H",
+    "price": "39783",
+    "weight": "9449",
+    "height": "5966",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 56) 5660 H",
+    "price": "98864",
+    "weight": "9774",
+    "height": "8799",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 56) 5660 HTS",
+    "price": "47977",
+    "weight": "4884",
+    "height": "7984",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 56) 5680 H",
+    "price": "57639",
+    "weight": "7559",
+    "height": "6778",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 56) 5690 H",
+    "price": "79648",
+    "weight": "7684",
+    "height": "9666",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 56) 5690 HTS",
+    "price": "66747",
+    "weight": "6698",
+    "height": "4758",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Mega) 350",
+    "price": "83859",
+    "weight": "5576",
+    "height": "6397",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Mega) 360",
+    "price": "34467",
+    "weight": "5664",
+    "height": "3778",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Mega) 370",
+    "price": "43698",
+    "weight": "5593",
+    "height": "3546",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 60) 6040",
+    "price": "75564",
+    "weight": "4468",
+    "height": "3398",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 60) 6060",
+    "price": "64499",
+    "weight": "5553",
+    "height": "7854",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 60) 6060 HTS",
+    "price": "94765",
+    "weight": "4766",
+    "height": "9437",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 60) 6065 HTS",
+    "price": "94899",
+    "weight": "6349",
+    "height": "3639",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 60) 6090",
+    "price": "74948",
+    "weight": "6874",
+    "height": "8347",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 60) 6090 HTS",
+    "price": "96938",
+    "weight": "5965",
+    "height": "6994",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Deutz-Fahr 60) 6095 HTS",
+    "price": "79334",
+    "weight": "3583",
+    "height": "8973",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Torum) Torum 740",
+    "price": "96665",
+    "weight": "7433",
+    "height": "4864",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Torum) Torum 750",
+    "price": "44535",
+    "weight": "8658",
+    "height": "8963",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Torum) Torum 770",
+    "price": "35938",
+    "weight": "7364",
+    "height": "6999",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Torum) Torum 780",
+    "price": "68687",
+    "weight": "3553",
+    "height": "3498",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Torum) Torum 785",
+    "price": "54397",
+    "weight": "5959",
+    "height": "8574",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Challenger 642-658) 642",
+    "price": "93759",
+    "weight": "4498",
+    "height": "5948",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Challenger 642-658) 643",
+    "price": "74954",
+    "weight": "9635",
+    "height": "9797",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Challenger 642-658) 644",
+    "price": "38666",
+    "weight": "8456",
+    "height": "9443",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Challenger 642-658) 645",
+    "price": "33496",
+    "weight": "8776",
+    "height": "5438",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Challenger 642-658) 646",
+    "price": "65485",
+    "weight": "9354",
+    "height": "3447",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Challenger 642-658) 648",
+    "price": "95889",
+    "weight": "9956",
+    "height": "4344",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Challenger 642-658) 652",
+    "price": "37589",
+    "weight": "6556",
+    "height": "4889",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Challenger 642-658) 654",
+    "price": "49647",
+    "weight": "6499",
+    "height": "3533",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Challenger 642-658) 658",
+    "price": "88593",
+    "weight": "4458",
+    "height": "7558",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Challenger CH 640) CH 640",
+    "price": "73688",
+    "weight": "8574",
+    "height": "4946",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-1200 НМ) Енисей-1200 1НМ",
+    "price": "68693",
+    "weight": "6373",
+    "height": "4586",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Енисей-1200 НМ) Енисей-1200 НМ",
+    "price": "68359",
+    "weight": "3486",
+    "height": "7758",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (SR 2000) 2035",
+    "price": "93387",
+    "weight": "7554",
+    "height": "6438",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (SR 2000) 2045",
+    "price": "58357",
+    "weight": "8688",
+    "height": "8955",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (SR 2000) 2055",
+    "price": "78964",
+    "weight": "7693",
+    "height": "8385",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (SR 2000) 2065",
+    "price": "88533",
+    "weight": "4879",
+    "height": "7734",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (SR 2000) 2085 TS",
+    "price": "53749",
+    "weight": "6935",
+    "height": "4833",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (SR 2000) 2095 TS",
+    "price": "66878",
+    "weight": "8689",
+    "height": "7489",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda M 306) M 306",
+    "price": "76939",
+    "weight": "3563",
+    "height": "3484",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Case IH AF2300) 2365",
+    "price": "79385",
+    "weight": "8957",
+    "height": "9675",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Case IH AF2300) 2366",
+    "price": "66835",
+    "weight": "6476",
+    "height": "5679",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Case IH AF2300) 2388",
+    "price": "89363",
+    "weight": "6685",
+    "height": "7565",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Dominator) 130",
+    "price": "95549",
+    "weight": "9653",
+    "height": "7339",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Dominator) 140",
+    "price": "59833",
+    "weight": "9654",
+    "height": "7573",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Dominator) 150",
+    "price": "89846",
+    "weight": "9595",
+    "height": "7633",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Medion) 310",
+    "price": "48449",
+    "weight": "3739",
+    "height": "4873",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Medion) 330",
+    "price": "93758",
+    "weight": "9893",
+    "height": "8564",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Medion) 340",
+    "price": "83886",
+    "weight": "4937",
+    "height": "6987",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Axial-Flow) 5088",
+    "price": "77477",
+    "weight": "3368",
+    "height": "3964",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Axial-Flow) 6088",
+    "price": "79768",
+    "weight": "9654",
+    "height": "5694",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Axial-Flow) 7010",
+    "price": "94597",
+    "weight": "9979",
+    "height": "5978",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Axial-Flow) 7088",
+    "price": "95879",
+    "weight": "6743",
+    "height": "4748",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Axial-Flow) 7120",
+    "price": "76976",
+    "weight": "6488",
+    "height": "5587",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Axial-Flow) 8010",
+    "price": "55438",
+    "weight": "8445",
+    "height": "6635",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Axial-Flow) 8120",
+    "price": "79367",
+    "weight": "3759",
+    "height": "6488",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Axial-Flow) 9010",
+    "price": "49543",
+    "weight": "6676",
+    "height": "5377",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Axial-Flow) 9120",
+    "price": "96888",
+    "weight": "9965",
+    "height": "5886",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda LXE) 21.50 LXE",
+    "price": "96747",
+    "weight": "8436",
+    "height": "7444",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda LXE) 21.50 LXE LS",
+    "price": "97588",
+    "weight": "8565",
+    "height": "9338",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda LXE) 25.50 LXE",
+    "price": "33679",
+    "weight": "7666",
+    "height": "6964",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda LXE) 28.60 LXE",
+    "price": "34398",
+    "weight": "5579",
+    "height": "9979",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Дон-1500 Б) Дон-1500 Б",
+    "price": "67996",
+    "weight": "8857",
+    "height": "5448",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Нива-Эффект) СК-5М-1",
+    "price": "99968",
+    "weight": "9768",
+    "height": "8849",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CS 6000) СS6080",
+    "price": "33973",
+    "weight": "5499",
+    "height": "7636",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (New Holland CS 6000) СS6090",
+    "price": "77956",
+    "weight": "8876",
+    "height": "4977",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Vector 410(425)) Vector 410",
+    "price": "48797",
+    "weight": "5777",
+    "height": "9796",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Vector 410(425)) Vector 425",
+    "price": "97736",
+    "weight": "7587",
+    "height": "9637",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Vector 410(425)) Vector 450 Track",
+    "price": "44667",
+    "weight": "6936",
+    "height": "7496",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda LX) 1950LX",
+    "price": "94586",
+    "weight": "3586",
+    "height": "3649",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda LX) 2050LX",
+    "price": "88338",
+    "weight": "7875",
+    "height": "9765",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda LX) 2350LX",
+    "price": "48388",
+    "weight": "5756",
+    "height": "6777",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda LX) 2560LX",
+    "price": "93358",
+    "weight": "8869",
+    "height": "3696",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda LX) 2760LX",
+    "price": "97337",
+    "weight": "4788",
+    "height": "3897",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Laverda 1740AL) Laverda 1740AL",
+    "price": "75355",
+    "weight": "6583",
+    "height": "8464",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Лида) 1300",
+    "price": "83547",
+    "weight": "7589",
+    "height": "3348",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Лида) 1600",
+    "price": "58997",
+    "weight": "8533",
+    "height": "9387",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Lexion 510-560) 510",
+    "price": "54376",
+    "weight": "3474",
+    "height": "5566",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Lexion 510-560) 520",
+    "price": "45573",
+    "weight": "6756",
+    "height": "8556",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Lexion 510-560) 530",
+    "price": "87485",
+    "weight": "9566",
+    "height": "7556",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Lexion 510-560) 540",
+    "price": "69495",
+    "weight": "5635",
+    "height": "7358",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Lexion 510-560) 540 C",
+    "price": "93699",
+    "weight": "6975",
+    "height": "3343",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Lexion 510-560) 550",
+    "price": "73897",
+    "weight": "4675",
+    "height": "8388",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Lexion 510-560) 560",
+    "price": "47393",
+    "weight": "6995",
+    "height": "4397",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9540 iWTS",
+    "price": "43994",
+    "weight": "7679",
+    "height": "8699",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9540 WTS",
+    "price": "75863",
+    "weight": "9773",
+    "height": "7645",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9560 iWTS",
+    "price": "37938",
+    "weight": "8856",
+    "height": "7987",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9560 WTS",
+    "price": "44495",
+    "weight": "6395",
+    "height": "8477",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9580 iWTS",
+    "price": "34854",
+    "weight": "9357",
+    "height": "5478",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9580 WTS",
+    "price": "84573",
+    "weight": "8489",
+    "height": "3946",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9640 iWTS",
+    "price": "68559",
+    "weight": "8389",
+    "height": "3346",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9640 WTS",
+    "price": "46688",
+    "weight": "3569",
+    "height": "5485",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9660 iWTS",
+    "price": "97649",
+    "weight": "7848",
+    "height": "3636",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9660 WTS",
+    "price": "33893",
+    "weight": "6998",
+    "height": "3656",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9680 iWTS",
+    "price": "73834",
+    "weight": "8583",
+    "height": "3377",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9000 WTS) 9680 WTS",
+    "price": "56435",
+    "weight": "6374",
+    "height": "4668",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt C) 5270 C",
+    "price": "46473",
+    "weight": "8554",
+    "height": "9365",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt C) 6300 C",
+    "price": "34537",
+    "weight": "5596",
+    "height": "3698",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (SR 3000) SR 3045C",
+    "price": "53583",
+    "weight": "5877",
+    "height": "3486",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (SR 3000) SR 3065L",
+    "price": "86665",
+    "weight": "5484",
+    "height": "9634",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (SR 3000) SR 3085 Superior",
+    "price": "66797",
+    "weight": "7633",
+    "height": "3858",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 2200 WTS) 2258 WTS",
+    "price": "46598",
+    "weight": "9537",
+    "height": "9656",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 2200 WTS) 2264 WTS",
+    "price": "44747",
+    "weight": "4496",
+    "height": "7388",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 2200 WTS) 2266 WTS",
+    "price": "36953",
+    "weight": "7586",
+    "height": "5873",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9660 СWS) 9660 CWS",
+    "price": "39375",
+    "weight": "9577",
+    "height": "9486",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9780 CTS (iCTS)) 9780 CTS",
+    "price": "66999",
+    "weight": "9675",
+    "height": "8786",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (John Deere 9780 CTS (iCTS)) 9780 iCTS",
+    "price": "54343",
+    "weight": "6594",
+    "height": "7664",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt E (L)) 5180 E",
+    "price": "96976",
+    "weight": "6887",
+    "height": "4944",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt E (L)) 5220 E",
+    "price": "49646",
+    "weight": "6833",
+    "height": "9556",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt E (L)) 5220 E/AL",
+    "price": "89669",
+    "weight": "7693",
+    "height": "9558",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt E (L)) 5250 E",
+    "price": "63844",
+    "weight": "7334",
+    "height": "8478",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt E (L)) 5250 E/AL",
+    "price": "85845",
+    "weight": "3373",
+    "height": "6578",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt E (L)) 5250 L",
+    "price": "88549",
+    "weight": "8677",
+    "height": "9949",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt E (L)) 5250 L/AL",
+    "price": "85469",
+    "weight": "7473",
+    "height": "4893",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt E (L)) 6250 E",
+    "price": "68869",
+    "weight": "7765",
+    "height": "8693",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt E (L)) 6250 E/AL",
+    "price": "58454",
+    "weight": "7937",
+    "height": "5754",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный (Fendt E (L)) 6270 L",
+    "price": "44679",
+    "weight": "7966",
+    "height": "6687",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный \"Славутич\" (КЗС-9-1) КЗС-9-1",
+    "price": "39666",
+    "weight": "6975",
+    "height": "4736",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный 3-го класса (Агромаш 3000) Агромаш 3000",
+    "price": "48944",
+    "weight": "3496",
+    "height": "5699",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный 4-го класса (Агромаш 4000) Агромаш 4000",
+    "price": "83539",
+    "weight": "7783",
+    "height": "9485",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный 5-го класса (Агромаш 5000) Агромаш 5000-1",
+    "price": "56743",
+    "weight": "8596",
+    "height": "6368",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный 5-го класса (Агромаш 5000) Агромаш 5000-2",
+    "price": "74584",
+    "weight": "7688",
+    "height": "8795",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный 6-го класса (Essil КЗС-760) КЗС-760",
+    "price": "78697",
+    "weight": "9433",
+    "height": "8957",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный высокопроизводительный (Агромаш 5101) Агромаш 5101",
+    "price": "66434",
+    "weight": "6457",
+    "height": "3647",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный для работы на склонах (Laverda AL quattro) Evolution",
+    "price": "69734",
+    "weight": "5883",
+    "height": "5395",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный для работы на склонах (Laverda AL quattro) Techno",
+    "price": "73654",
+    "weight": "5898",
+    "height": "8656",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный клавишный (John Deere 1450-1550 CWS) 1450 CWS",
+    "price": "69334",
+    "weight": "6777",
+    "height": "6758",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный клавишный (John Deere 1450-1550 CWS) 1550 CWS",
+    "price": "88863",
+    "weight": "3459",
+    "height": "5987",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный Палессе GS14 (КЗС-1420) GS14",
+    "price": "43563",
+    "weight": "7498",
+    "height": "3573",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный Палессе GS16 (КЗС-1624-1) КЗС-1624-1",
+    "price": "63946",
+    "weight": "9453",
+    "height": "3357",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный полнопропускной (Lovol Gushen) 4LZ",
+    "price": "88957",
+    "weight": "3834",
+    "height": "9597",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный роторный (Challenger 660 (670, 680)) 660",
+    "price": "33463",
+    "weight": "6343",
+    "height": "6569",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный роторный (Challenger 660 (670, 680)) 670",
+    "price": "54394",
+    "weight": "6996",
+    "height": "6635",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный роторный (Challenger 660 (670, 680)) 680",
+    "price": "78747",
+    "weight": "3989",
+    "height": "3549",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный роторный (Deutz Fahr 7545 RTS) Deutz Fahr 7545 RTS",
+    "price": "65649",
+    "weight": "6369",
+    "height": "4735",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с аксиально-роторной системой обмолота и сепарации (John Deere 9000 STS) 9560 STS",
+    "price": "37975",
+    "weight": "4689",
+    "height": "3666",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с аксиально-роторной системой обмолота и сепарации (John Deere 9000 STS) 9660 STS",
+    "price": "55638",
+    "weight": "3369",
+    "height": "9439",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с аксиально-роторной системой обмолота и сепарации (John Deere 9000 STS) 9760 STS",
+    "price": "49469",
+    "weight": "5749",
+    "height": "4489",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с аксиально-роторной системой обмолота и сепарации (John Deere 9000 STS) 9860 STS",
+    "price": "78575",
+    "weight": "4343",
+    "height": "9658",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с аксиально-роторной системой обмолота и сепарации (John Deere 9000 STS) 9880 STS",
+    "price": "87379",
+    "weight": "7447",
+    "height": "9783",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с одним аксиальным ротором (John Deere STS 70 серия) 9570 STS",
+    "price": "43843",
+    "weight": "8758",
+    "height": "9749",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с одним аксиальным ротором (John Deere STS 70 серия) 9670 STS",
+    "price": "58597",
+    "weight": "7864",
+    "height": "4476",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с одним аксиальным ротором (John Deere STS 70 серия) 9770 STS",
+    "price": "68745",
+    "weight": "5534",
+    "height": "7589",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с одним аксиальным ротором (John Deere STS 70 серия) 9870 STS",
+    "price": "96996",
+    "weight": "5938",
+    "height": "3976",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с роторным сепаратором (Lexion 570-600) 570",
+    "price": "37876",
+    "weight": "7799",
+    "height": "6489",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с роторным сепаратором (Lexion 570-600) 570 С",
+    "price": "78363",
+    "weight": "8397",
+    "height": "6847",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с роторным сепаратором (Lexion 570-600) 580",
+    "price": "79599",
+    "weight": "3997",
+    "height": "6648",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный с роторным сепаратором (Lexion 570-600) 600",
+    "price": "68944",
+    "weight": "4663",
+    "height": "6596",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный самоходный (Палессе GS10) КЗС-10К",
+    "price": "55379",
+    "weight": "8383",
+    "height": "5835",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный самоходный (КЗС-ЗГ \"Русь\") КЗС-ЗГ",
+    "price": "59869",
+    "weight": "4956",
+    "height": "7674",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный самоходный (Палессе GS12) КЗС-1218",
+    "price": "89544",
+    "weight": "6976",
+    "height": "7889",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный самоходный (Палессе GS14) КЗ-14",
+    "price": "63947",
+    "weight": "5337",
+    "height": "5878",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный самоходный (Палессе GS07) КЗС-7",
+    "price": "89589",
+    "weight": "4443",
+    "height": "7848",
+    "class": "7"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный самоходный (Atek 1300) Atek 1300",
+    "price": "94566",
+    "weight": "8439",
+    "height": "7878",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн зерноуборочный самоходный (Палессе GS812) КЗС-812",
+    "price": "49754",
+    "weight": "6566",
+    "height": "4596",
+    "class": "8"
+  },
+  {
+    "machine_title": "Комбайн кукурузоуборочный (4YZ-3) 4YZ-3",
+    "price": "88989",
+    "weight": "9698",
+    "height": "4977",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн кукурузоуборочный (YTO) YZ4650W/4565W",
+    "price": "47855",
+    "weight": "5873",
+    "height": "6475",
+    "class": "9"
+  },
+  {
+    "machine_title": "Комбайн кукурузоуборочный (YTO) YZ4650WY/4565WY",
+    "price": "49595",
+    "weight": "9936",
+    "height": "7663",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн рисозерноуборочный (Енисей-1200 РМ) Енисей-1200 РМ",
+    "price": "68658",
+    "weight": "9337",
+    "height": "7797",
+    "class": "6"
+  },
+  {
+    "machine_title": "Комбайн рисозерноуборочный (Енисей-858) Агромаш 3311",
+    "price": "95744",
+    "weight": "7679",
+    "height": "5887",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн рисозерноуборочный (Енисей-858) Енисей-858",
+    "price": "98443",
+    "weight": "9683",
+    "height": "6439",
+    "class": "5"
+  },
+  {
+    "machine_title": "Комбайн рисоуборочный полнопропускной (Foton 4LZ) 4LZ-160B",
+    "price": "44535",
+    "weight": "9583",
+    "height": "7965",
+    "class": "4"
+  },
+  {
+    "machine_title": "Комбайн рисоуборочный полнопропускной (Foton 4LZ) 4LZ-210",
+    "price": "57537",
+    "weight": "6657",
+    "height": "4554",
+    "class": "3"
+  },
+  {
+    "machine_title": "Комбайн рисоуборочный полнопропускной (Foton 4LZ) 4LZ-258",
+    "price": "83545",
+    "weight": "8755",
+    "height": "7867",
+    "class": "9"
+  }
+]
