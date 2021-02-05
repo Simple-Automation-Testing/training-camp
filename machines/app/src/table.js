@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import dayjs from 'dayjs'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {MachineModal} from './components/modal.machine'
@@ -200,14 +201,29 @@ class SternMachineTable extends Component {
     const user = getItem('user')
     const table = sternMachines.map((item, index) => {
       return (
-        <tr key={index} onClick={() => this.renderItem(item)}>
-          <td style={{width: '14%'}} className="active brand">{item.brand}</td>
-          <td style={{width: '14%'}} className="active volume">{item.work_volume}</td>
-          <td style={{width: '14%'}} className="active">{item.L}</td>
-          <td style={{width: '14%'}} className="active">{item.W}</td>
-          <td style={{width: '14%'}} className="active">{item.weight}</td>
-          <td style={{width: '14%'}} className="active">{item.tractor_power}</td>
-          <td style={{width: '14%'}} className="active price">{item.price}</td>
+        <tr key={index} onClick={() => {
+          console.log('FIrst')
+          this.renderItem(item)
+        }}>
+          <td style={{width: '20%'}} className="active brand">
+            {item.brand}
+            {item.addedDate && <div>Дата старту продажу: <span>{dayjs(item.addedDate).format('YYYY-MM-DD')}</span></div>}
+            {item.seller && <div>Продавець <span>{item.seller}</span></div>}
+            {(item.alternativeSellers && item.alternativeSellers.length) && <div className="alternative-sellers"><span>Альтернативні пропозиції: </span>
+              {item.alternativeSellers.map((alternativeSeller) => {
+                return <div className="alternative-seller" onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  this.renderItem({...item, alternativeSeller: alternativeSeller.seller, price: item.price - (item.price/100 * alternativeSeller.discount), discount: alternativeSeller.discount})
+                }}>Продавець:{<span className="alternative-seller-name">{alternativeSeller.seller}</span>} | Знижка:{<span className="alternative-seller-discount">{alternativeSeller.discount}</span>} %</div>
+            })}</div>}
+          </td>
+          <td style={{width: '13%'}} className="active volume">{item.work_volume}</td>
+          <td style={{width: '13%'}} className="active">{item.L}</td>
+          <td style={{width: '13%'}} className="active">{item.W}</td>
+          <td style={{width: '13%'}} className="active">{item.weight}</td>
+          <td style={{width: '13%'}} className="active">{item.tractor_power}</td>
+          <td style={{width: '13%'}} className="active price">{item.price}</td>
         </tr>
       )
     })
@@ -267,21 +283,21 @@ class SternMachineTable extends Component {
             <table style={{width: '100%'}} className="table-bordered text-center">
               <thead>
                 <tr className="success inputs">
-                  <td style={{width: '14%', height: '40px'}}>
+                  <td style={{width: '20%', height: '40px'}}>
                     <input onChange={this.handleAdd('brand')} placeholder="Виробник" /></td>
-                  <td style={{width: '14%'}}>
+                  <td style={{width: '13%'}}>
                     <input onChange={this.handleAdd('work_volume')} placeholder="Робочий об'єм" /></td>
-                  <td style={{width: '14%'}}>
+                  <td style={{width: '13%'}}>
                     <input onChange={this.handleAdd('L')} placeholder="Довжина" /></td>
-                  <td style={{width: '14%'}}>
+                  <td style={{width: '13%'}}>
                     <input onChange={this.handleAdd('W')} placeholder="Ширина" /></td>
-                  <td style={{width: '14%'}}>
+                  <td style={{width: '13%'}}>
                     <input onChange={this.handleAdd('weight')} placeholder="Маса" />
                   </td>
-                  <td style={{width: '14%'}}>
+                  <td style={{width: '13%'}}>
                     <input onChange={this.handleAdd('tractor_power')} placeholder="Потужність трактора" />
                   </td>
-                  <td style={{width: '14%'}}>
+                  <td style={{width: '13%'}}>
                     <input onChange={this.handleAdd('price')} placeholder="Ціна" />
                   </td>
                 </tr>

@@ -301,3 +301,16 @@ body {
   color: rgba(250, 70, 100, 0.9);
   font-size: 15px;
 }
+
+.active.brand {
+  text-align: left;
+}
+
+.alternative-sellers {
+  font-weight: bold;
+}
+
+.alternative-seller {
+  font-style: oblique;
+}
+

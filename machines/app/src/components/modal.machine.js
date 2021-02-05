@@ -16,6 +16,12 @@ class MachineModal extends Component {
           <div className="modal_content p">Вага                     <span>{item.weight}</span> кг</div>
           <div className="modal_content p">Тягове зусилля трактора  <span>{item.tractor_power}</span></div>
           <div className="modal_content p">Ціна                     <span>{item.price}</span></div>
+          {item.alternativeSeller &&
+            <div className="modal_content p">
+              Від альтернативного продаця  <span className="alternative-seller">{item.alternativeSeller}</span>
+              <div>З врахуванням знижки: <span className="discount">{item.discount} %</span></div>
+          </div>
+          }
           <div>{children}</div>
         </div>
       </div>
