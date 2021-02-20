@@ -25,7 +25,8 @@ class Catalog extends Component {
       <div>
         <button onClick={this.showList}>{show ? "Скрыть" : "Показать"} </button>
         {show && <div>{
-          catalogKeys.map((category) => <div>{
+          catalogKeys.map((category) => <div> <div> {category} </div>{
+
             catalog[category].map((item) => <Product {...item}/>)
           }</div>)
         }</div>}
