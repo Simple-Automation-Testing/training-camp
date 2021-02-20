@@ -2,7 +2,7 @@ const store = {
   noCategory: []
 };
 
-const requiredFields = ['name', 'category', 'price', 'size'];
+const requiredFields = ['name', 'category', 'price', 'size', 'brand'];
 
 function addItemToStore({category = 'noCategory', ...item}) {
   if(!store[category]) {
