@@ -206,9 +206,9 @@ class SternMachineTable extends Component {
           this.renderItem(item)
         }}>
           <td style={{width: '20%'}} className="active brand">
-            {item.brand}
-            {item.addedDate && <div>Дата старту продажу: <span>{dayjs(item.addedDate).format('YYYY-MM-DD')}</span></div>}
-            {item.seller && <div>Продавець <span>{item.seller}</span></div>}
+            <span className="brand">{item.brand}</span>
+            {item.addedDate && <div className="start-sell-date">Дата старту продажу: <span>{dayjs(item.addedDate).format('YYYY-MM-DD')}</span></div>}
+            {item.seller && <div className="seller">Продавець <span>{item.seller}</span></div>}
             {(item.alternativeSellers && item.alternativeSellers.length) && <div className="alternative-sellers"><span>Альтернативні пропозиції: </span>
               {item.alternativeSellers.map((alternativeSeller) => {
                 return <div className="alternative-seller" onClick={(e) => {
