@@ -66,7 +66,9 @@ class App extends Component {
         <div>
           <button onClick={this.addItem}>    Добавить товар на склад</button>{" "}
         </div>
-        <Catalog />
+
+        <Catalog catalog={getFullStore()} />
+
       </div>
     );
   }

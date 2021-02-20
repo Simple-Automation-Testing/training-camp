@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.product {
+  background:rgba(0, 0, 0, 0.5);
+  width: 200px;
+  height: 100px;
+  text-align: left;
+}
