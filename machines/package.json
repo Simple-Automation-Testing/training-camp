@@ -12,7 +12,7 @@
     "backend:dev": "nodemon ./server/index.js",
     "build": "webpack --production",
     "build:image": "webpack --production && docker build -t potapovdim/application:v1 -f ./docker/Dockerfile .",
-    "test:mocha": "mocha ./testing/**/*.spec.js"
+    "test:mocha": "mocha ./testing/**/*.spec.js --timeout 15000"
   },
   "author": "",
   "license": "ISC",

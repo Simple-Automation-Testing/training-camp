@@ -1,3 +1,5 @@
+const {Element } = require('../../lib/index')
+
 class LoginPage {
 	static LOGIN_URL = `http://localhost:8081/`;
 	static LOGIN_FORM_USER_NAME_FIELD = `//input[@placeholder="Ім'я користувача"]`;
@@ -13,6 +15,9 @@ class LoginPage {
 
 	constructor(page) {
 		this.page = page;
+		this.username = new Element(LoginPage.LOGIN_FORM_USER_NAME_FIELD, 'User name field', page)
+		this.password = new Element(LoginPage.LOGIN_FORM_PASSWORD_FIELD, 'Password field', page)
+		this.signin = new Element(LoginPage.LOGIN_FORM_SIGN_IN_BUTTON, 'Sign in button', page)
 	}
 
 	async switchTo(modalName) {
@@ -29,7 +34,7 @@ class LoginPage {
 		}
 	}
 
-	async checkIn({ options }) {
+	async checkIn(options) {
 		await this.page.fill(
 			LoginPage.CHECKIN_FORM_USERNAME_FIELD,
 			options.username
@@ -43,10 +48,10 @@ class LoginPage {
 		await (await this.page.$(LoginPage.CHECKIN_FORM_REGISTER_BUTTON)).click();
 	}
 
-	async login({ options }) {
-		await this.page.fill(LoginPage.LOGIN_FORM_USER_NAME_FIELD, options.name);
-		await this.page.fill(LoginPage.LOGIN_FORM_PASSWORD_FIELD, options.password);
-		await (await this.page.$(LoginPage.LOGIN_FORM_SIGN_IN_BUTTON)).click();
+	async login({ name, password }) {
+		await this.username.sendKeys(name)
+		await this.password.sendKeys(password)
+		await this.signin.click()
 	}
 }
 
