@@ -1,7 +1,9 @@
-const {LoginPage} = require('./login');
-const {TablesPage} = require('./tables');
+const { LoginPage } = require("./login");
+const { TablesPage } = require("./tables");
+const { Page } = require("./page");
 
 module.exports = {
-  LoginPage,
-  TablesPage
-}
+	Page,
+	LoginPage,
+	TablesPage,
+};

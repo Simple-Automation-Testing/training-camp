@@ -5,37 +5,43 @@
  */
 
 class Element {
-  /**
-   * @param {string} selector element selector
-   * @param {string} name element name
-   * @param
-   */
-  constructor(selector, name, page) {
-    this.__rootSelector = selector;
-    this.__id = name;
-    this.__page = page;
-    this.__rootElement = null;
-  }
+	/**
+	 * @param {string} selector - an element selector
+	 * @param {string} name - an element name
+	 * @param {Object<Page>} page - any page of class that extends class Page
+	 */
+	constructor(selector, name, page) {
+		this.__rootSelector = selector;
+		this.__id = name;
+		this.__page = page;
+		this.__rootElement = null;
+	}
 
-  /**
-   * @private
-   */
-  async initRootElement() {
-    this.__rootElement = await this.__page.$(this.__rootSelector);
-  }
+	/**
+	 * @private
+	 */
+	async _initRootElement() {
+		this.__rootElement = await this.__page.$(this.__rootSelector);
+	}
 
-  async click() {
-    await this.initRootElement()
-    await this.__rootElement.click()
-  }
+	/**
+	 * @public
+	 */
+	async click() {
+		await this._initRootElement();
+		await this.__rootElement.click();
+	}
 
-  async sendKeys(...keys) {
-    await this.initRootElement();
-    await this.__rootElement.type(...keys)
-  }
+	/**
+	 * @public
+	 * @param {string} [options = {}] keys - a text to type into a rootElement, options - optional parameter
+	 */
+	async sendKeys(...keys) {
+		await this._initRootElement();
+		await this.__rootElement.type(...keys);
+	}
 }
-
 
 module.exports = {
-  Element
-}
+	Element,
+};
