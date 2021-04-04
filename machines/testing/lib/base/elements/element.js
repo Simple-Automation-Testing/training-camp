@@ -29,21 +29,7 @@ class Element {
 	 */
 	async click() {
 		await this._initRootElement();
-		// ElementHandle belongs to Playwright
-		if (this.__rootElement.constructor.name === "ElementHandle") {
-			await this.__rootElement.click();
-		}
-	}
-
-	/**
-	 * @public
-	 * @param {string} [options = {}] keys - a text to type into a rootElement, options - optional parameter
-	 */
-	async sendKeys(...keys) {
-		await this._initRootElement();
-		if (this.__rootElement.constructor.name === "ElementHandle") {
-			await this.__rootElement.type(...keys);
-		}
+		await this.__rootElement.click();
 	}
 }
 

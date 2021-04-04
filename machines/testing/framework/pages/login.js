@@ -1,5 +1,5 @@
-const { Page } = require("./page"); // export from index.js doesn't work. Why? Cycle dependencies? Is it ok export from page,js?
-const { Element } = require("../../lib/index");
+const { Page } = require("../../lib/base/pages/page");
+const { Input, Button } = require("../../lib/index");
 
 class LoginPage extends Page {
 	static LOGIN_URL = `http://localhost:8081/`;
@@ -14,14 +14,14 @@ class LoginPage extends Page {
 
 	constructor(page) {
 		super(page);
-		this.menuSignin = new Element(LoginPage.MENU_SIGNIN, "Menu ignin button", page);
-		this.menuCheckin = new Element(LoginPage.MENU_CHECKIN, "Menu checkin button", page);
-		this.username = new Element(LoginPage.USERNAME_FIELD, "User name field", page);
-		this.name = new Element(LoginPage.NAME_FIELD, "Name field", page);
-		this.password = new Element(LoginPage.PASSWORD_FIELD, "Password field", page);
-		this.signin = new Element(LoginPage.SIGNIN_BUTTON, "Signin button", page);
-		this.email = new Element(LoginPage.EMAIL_FIELD, "Email field", page);
-		this.checkin = new Element(LoginPage.CHECKIN_BUTTON, "Checkin button", page);
+		this.menuSignin = new Button(LoginPage.MENU_SIGNIN, "Menu signin button", page);
+		this.menuCheckin = new Button(LoginPage.MENU_CHECKIN, "Menu checkin button", page);
+		this.username = new Input(LoginPage.USERNAME_FIELD, "User name field", page);
+		this.name = new Input(LoginPage.NAME_FIELD, "Name field", page);
+		this.password = new Input(LoginPage.PASSWORD_FIELD, "Password field", page);
+		this.signin = new Button(LoginPage.SIGNIN_BUTTON, "Signin button", page);
+		this.email = new Input(LoginPage.EMAIL_FIELD, "Email field", page);
+		this.checkin = new Button(LoginPage.CHECKIN_BUTTON, "Checkin button", page);
 	}
 
 	async open() {

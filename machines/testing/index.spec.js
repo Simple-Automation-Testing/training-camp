@@ -24,7 +24,8 @@ describe("Login file", () => {
 			await loginPage.switchTo("checkin");
 			await loginPage.checkIn({ username: "anav", name: "andrei", email: "anav@gmail.com", password: "andrei" });
 
-			expect(await page.textContent(TablesPage.TITLE)).to.equal("Таблиці, Привіт anav");
+			const tablePage = new TablesPage(page);
+			expect(await tablePage.getTitle()).to.equal("Таблиці, Привіт anav");
 		});
 	});
 
@@ -35,7 +36,8 @@ describe("Login file", () => {
 			await loginPage.switchTo("login");
 			await loginPage.login({ name: "admin", password: "admin" });
 
-			expect(await page.textContent(TablesPage.TITLE)).to.equal("Таблиці, Привіт admin");
+			const tablePage = new TablesPage(page);
+			expect(await tablePage.getTitle()).to.equal("Таблиці, Привіт admin");
 		});
 	});
 });

@@ -1,5 +1,8 @@
-const {Element} = require('./elements/element')
+const { Element, Input, Button, Container } = require("./base/elements/index");
 
 module.exports = {
-  Element,
-}
+	Element,
+	Input,
+	Button,
+	Container,
+};
