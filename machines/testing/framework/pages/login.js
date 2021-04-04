@@ -24,8 +24,11 @@ class LoginPage extends Page {
 		this.checkin = new Element(LoginPage.CHECKIN_BUTTON, "Checkin button", page);
 	}
 
-	async switchTo(modalName) {
+	async open() {
 		await this.page.goto(LoginPage.LOGIN_URL);
+	}
+
+	async switchTo(modalName) {
 		switch (modalName) {
 			case "checkin":
 				await this.menuCheckin.click();

@@ -20,6 +20,7 @@ describe("Login file", () => {
 	describe("Check-in in the app", async () => {
 		it("should check-in a new user and redirect him to Tables page", async () => {
 			const loginPage = new LoginPage(page);
+			await loginPage.open();
 			await loginPage.switchTo("checkin");
 			await loginPage.checkIn({ username: "anav", name: "andrei", email: "anav@gmail.com", password: "andrei" });
 
@@ -30,6 +31,7 @@ describe("Login file", () => {
 	describe("Login to the app", async () => {
 		it("should login an exisiting user and redirect him to Tables page", async () => {
 			const loginPage = new LoginPage(page);
+			await loginPage.open();
 			await loginPage.switchTo("login");
 			await loginPage.login({ name: "admin", password: "admin" });
 

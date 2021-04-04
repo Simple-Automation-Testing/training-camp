@@ -29,7 +29,10 @@ class Element {
 	 */
 	async click() {
 		await this._initRootElement();
-		await this.__rootElement.click();
+		// ElementHandle belongs to Playwright
+		if (this.__rootElement.constructor.name === "ElementHandle") {
+			await this.__rootElement.click();
+		}
 	}
 
 	/**
@@ -38,7 +41,9 @@ class Element {
 	 */
 	async sendKeys(...keys) {
 		await this._initRootElement();
-		await this.__rootElement.type(...keys);
+		if (this.__rootElement.constructor.name === "ElementHandle") {
+			await this.__rootElement.type(...keys);
+		}
 	}
 }
 
