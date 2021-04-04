@@ -41,17 +41,17 @@ class LoginPage extends Page {
 		}
 	}
 
-	async checkIn({ username, name, email, password }) {
-		await this.username.sendKeys(username);
-		await this.name.sendKeys(name);
-		await this.email.sendKeys(email);
-		await this.password.sendKeys(password);
+	async checkIn(options) {
+		await this.username.sendKeys(options.username);
+		await this.name.sendKeys(options.name);
+		await this.email.sendKeys(options.email);
+		await this.password.sendKeys(options.password);
 		await this.checkin.click();
 	}
 
-	async login({ name, password }) {
-		await this.username.sendKeys(name);
-		await this.password.sendKeys(password);
+	async login(options) {
+		await this.username.sendKeys(options.name);
+		await this.password.sendKeys(options.password);
 		await this.signin.click();
 	}
 }
