@@ -20,6 +20,18 @@ class Container extends Element {
 		await this._initRootElement();
 		return await this.__rootElement.textContent();
 	}
+
+	/**
+	 * @public
+	 */
+	async getArrayOfTextcontentFromListOfItems(singleItemLocator) {
+		await this._initRootElement();
+		return await this.__rootElement.$$eval(singleItemLocator, (nodes) => {
+			return nodes.map((item) => {
+				return item.innerText.trim();
+			});
+		});
+	}
 }
 
 module.exports = {
