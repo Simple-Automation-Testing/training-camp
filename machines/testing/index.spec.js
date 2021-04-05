@@ -1,5 +1,5 @@
 const { chromium, firefox, webkit } = require("playwright");
-const { LoginPage, TablesPage } = require("./framework/pages/index");
+const { LoginPage, TablesPage, AdminPage } = require("./framework/pages/index");
 const { expect } = require("chai");
 
 describe("Login file", () => {
@@ -33,11 +33,25 @@ describe("Login file", () => {
 		it("should login an exisiting user and redirect him to Tables page", async () => {
 			const loginPage = new LoginPage(page);
 			await loginPage.open();
-			await loginPage.switchTo("login");
 			await loginPage.login({ name: "admin", password: "admin" });
 
 			const tablePage = new TablesPage(page);
 			expect(await tablePage.getTitle()).to.equal("Таблиці, Привіт admin");
+		});
+	});
+
+	describe("Enter to admin page", () => {
+		it.only("should redirect admin to Admin cabinet", async () => {
+			const loginPage = new LoginPage(page);
+			await loginPage.open();
+			await loginPage.login({ name: "admin", password: "admin" });
+
+			const tablePage = new TablesPage(page);
+			expect(await tablePage.getTitle()).to.equal("Таблиці, Привіт admin");
+			await tablePage.toAdminPage();
+
+			const adminPage = new AdminPage(page);
+			expect(await adminPage.getTitle()).to.equal("Кабінет адміністратора, Привіт admin");
 		});
 	});
 });
