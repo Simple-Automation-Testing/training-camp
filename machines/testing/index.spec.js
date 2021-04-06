@@ -20,29 +20,24 @@ describe("Login file", () => {
 	describe("Check-in in the app", async () => {
 		it("should check-in a new user and redirect him to Tables page", async () => {
 			const loginPage = new LoginPage(page);
+			await loginPage.open();
 			await loginPage.switchTo("checkin");
-			await loginPage.checkIn({
-				username: "andrei",
-				name: "andrei",
-				email: "andrei",
-				password: "andrei",
-			});
+			await loginPage.checkIn({ username: "anav", name: "andrei", email: "anav@gmail.com", password: "andrei" });
 
-			expect(await page.textContent(TablesPage.TITLE)).to.equal(
-				"Таблиці, Привіт andrei"
-			);
+			const tablePage = new TablesPage(page);
+			expect(await tablePage.getTitle()).to.equal("Таблиці, Привіт anav");
 		});
 	});
 
 	describe("Login to the app", async () => {
 		it("should login an exisiting user and redirect him to Tables page", async () => {
 			const loginPage = new LoginPage(page);
+			await loginPage.open();
 			await loginPage.switchTo("login");
 			await loginPage.login({ name: "admin", password: "admin" });
 
-			expect(await page.textContent(TablesPage.TITLE)).to.equal(
-				"Таблиці, Привіт admin"
-			);
+			const tablePage = new TablesPage(page);
+			expect(await tablePage.getTitle()).to.equal("Таблиці, Привіт admin");
 		});
 	});
 });
