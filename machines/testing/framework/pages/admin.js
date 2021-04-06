@@ -12,6 +12,9 @@ class AdminPage extends Page {
 	static CREATE_BUTTON = `(//button[text()="Створити нового користувача"])[2]`;
 	static LIST_OF_USERS_DIV = `//div[@class="list"]`;
 	static USER_NAME_ITEM = `//div[@class='user_item']/div[1]`;
+	static USER_NAME_DETAILS = `//div[@class='user_item']/div[2]`;
+	static IS_ADMIN_CHECKBOX = `//input[@type="checkbox"]`;
+	static DETAIL_BUTTON = `//button[text()="Деталі"]`;
 
 	constructor(page) {
 		super(page);
@@ -25,6 +28,7 @@ class AdminPage extends Page {
 		this.password = new Input(AdminPage.PASSWORD_FIELD, "Password field", page);
 		this.createNewUser = new Button(AdminPage.CREATE_BUTTON, "Create new user button", page);
 		this.usersList = new Container(AdminPage.LIST_OF_USERS_DIV, "List of existing users", page);
+		this.isAdmin = new Input(AdminPage.IS_ADMIN_CHECKBOX, "Checkbox is user admin", page);
 	}
 
 	async getTitle() {
@@ -37,6 +41,9 @@ class AdminPage extends Page {
 		await this.name.sendKeys(options.name);
 		await this.email.sendKeys(options.email);
 		await this.password.sendKeys(options.password);
+		if (options.isAdmin) {
+			await this.isAdmin.click();
+		}
 		await this.createNewUser.click();
 	}
 

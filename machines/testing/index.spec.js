@@ -64,9 +64,22 @@ describe("Login file", () => {
 			await tablePage.toAdminPage();
 
 			const adminPage = new AdminPage(page);
-			expect(await adminPage.getTitle()).to.equal("Кабінет адміністратора, Привіт admin");
 			await adminPage.createUser({ username: "anav1", name: "andrei", email: "anav1@gmail.com", password: "andrei1" });
 			expect(await adminPage.isUserExistInArray("anav1")).to.be.true;
+		});
+
+		it("should create new user with role Admin", async () => {
+			const loginPage = new LoginPage(page);
+			await loginPage.open();
+			await loginPage.login({ name: "admin", password: "admin" });
+
+			const tablePage = new TablesPage(page);
+			await tablePage.toAdminPage();
+
+			const adminPage = new AdminPage(page);
+			await adminPage.createUser({ username: "anav2", name: "andrei", email: "anav2@gmail.com", password: "andrei2", isAdmin: true });
+			expect(await adminPage.isUserExistInArray("anav2")).to.be.true;
+			// the assertion that user is admin not implemented yet
 		});
 	});
 });
