@@ -16,7 +16,6 @@ class TablesPage extends Page {
 
 	async toAdminPage() {
 		await this.adminCabinet.click();
-		console.log(`click the toAdminButton`);
 	}
 }
 

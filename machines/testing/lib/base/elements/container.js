@@ -32,6 +32,35 @@ class Container extends Element {
 			});
 		});
 	}
+
+	async getArrayOfTextcontentAndIndexFromListOfItems(singleItemLocator) {
+		await this._initRootElement();
+		// start
+		// const name = "anav1";
+		// const elHandleArray = await this.__page.$$("//div[@class='user_item']");
+		// elHandleArray
+		// .forEach((el) => {
+		// let res = el.innerText;
+		// console.log(res);
+		// })
+		// .then((res) => console.log(res));
+		// end
+		const usersArray = await this.__rootElement.$$eval(singleItemLocator, (nodes) => {
+			return nodes.map((item) => {
+				return item.innerText.trim();
+			});
+		});
+		const name = "anav2";
+		console.log(usersArray);
+		let adminIndex = usersArray.findIndex(name);
+		return adminIndex;
+	}
+
+	async getElements(elem) {
+		await this._initRootElement();
+		const elHtml = await this.__page.$$(elem);
+		//return elHtml;
+	}
 }
 
 module.exports = {

@@ -29,6 +29,7 @@ class AdminPage extends Page {
 		this.createNewUser = new Button(AdminPage.CREATE_BUTTON, "Create new user button", page);
 		this.usersList = new Container(AdminPage.LIST_OF_USERS_DIV, "List of existing users", page);
 		this.isAdmin = new Input(AdminPage.IS_ADMIN_CHECKBOX, "Checkbox is user admin", page);
+		this.detailButton = null;
 	}
 
 	async getTitle() {
@@ -51,6 +52,16 @@ class AdminPage extends Page {
 		await this.listUsersButton.click();
 		const usernamesArray = await this.usersList.getArrayOfTextcontentFromListOfItems(AdminPage.USER_NAME_ITEM);
 		return usernamesArray.includes(username);
+	}
+
+	async isUserAdmin(userName) {
+		await this.listUsersButton.click();
+		const usernamesArray = await this.usersList.getArrayOfTextcontentFromListOfItems(AdminPage.USER_NAME_ITEM);
+		let index = usernamesArray.indexOf(userName);
+		let indexAdminLocator = `(${AdminPage.USER_NAME_DETAILS})[${index + 1}]`;
+		this.detailButton = new Button(indexAdminLocator, "Detail button", this.page);
+		await this.detailButton.click();
+		return await this.isAdmin.isCheckboxChecked();
 	}
 }
 
