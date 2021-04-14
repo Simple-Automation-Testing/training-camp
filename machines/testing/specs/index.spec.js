@@ -1,5 +1,5 @@
 const { chromium, firefox, webkit } = require("playwright");
-const { LoginPage, TablesPage, AdminPage } = require("./framework/pages/index");
+const { LoginPage, TablesPage, AdminPage } = require("./../framework/pages/index");
 const { expect } = require("chai");
 
 describe("Login file", () => {
