@@ -4,6 +4,8 @@
  * @see https://playwright.dev/docs/api/class-elementhandle
  */
 
+const { step } = require("../../report");
+
 class Element {
 	/**
 	 * @param {string} selector - an element selector
@@ -27,6 +29,7 @@ class Element {
 	/**
 	 * @public
 	 */
+	//@step((name) => `${name} execute click`)
 	async click() {
 		await this._initRootElement();
 		await this.__rootElement.click();
