@@ -29,7 +29,7 @@ class Element {
 	/**
 	 * @public
 	 */
-	//@step((name) => `${name} execute click`)
+	@step((name) => `${name} execute click`)
 	async click() {
 		await this._initRootElement();
 		await this.__rootElement.click();
