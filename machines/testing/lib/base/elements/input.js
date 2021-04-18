@@ -21,6 +21,11 @@ class Input extends Element {
 		await this._initRootElement();
 		await this.__rootElement.type(...keys);
 	}
+
+	async isCheckboxChecked() {
+		await this._initRootElement();
+		return await this.__rootElement.isChecked();
+	}
 }
 
 module.exports = {

@@ -79,7 +79,7 @@ describe("Login file", () => {
 			const adminPage = new AdminPage(page);
 			await adminPage.createUser({ username: "anav2", name: "andrei", email: "anav2@gmail.com", password: "andrei2", isAdmin: true });
 			expect(await adminPage.isUserExistInArray("anav2")).to.be.true;
-			// the assertion that user is admin not implemented yet
+			expect(await adminPage.isUserAdmin("anav2")).to.be.true;
 		});
 	});
 });
