@@ -1,4 +1,3 @@
-const { allure } = require("allure-mocha/runtime");
 const { ContentType } = require("allure-js-commons");
 
 async function attachScreenshot(title, png) {
@@ -10,22 +9,8 @@ function attachJsonData(title, data) {
 }
 
 async function stepAllure(name, cb) {
-	const step = allure.startStep(name);
-	try {
-		const result = await cb();
-		if (result) {
-			allure.attachment(`${name} result`, JSON.stringify(result), ContentType.JSON);
-		}
-		// set success result
-		step.step.stepResult.status = "passed";
-		step.endStep();
-		return result;
-	} catch (error) {
-		// set fail result
-		step.step.stepResult.status = "broken";
-		step.endStep();
-		throw error;
-	}
+	const { allure } = require("allure-mocha/runtime");
+	return allure.step(name, cb);
 }
 
 module.exports = {

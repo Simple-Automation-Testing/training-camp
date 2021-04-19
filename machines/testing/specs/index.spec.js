@@ -16,7 +16,7 @@ describe("Login file", () => {
 	afterEach(async () => {
 		await browser.close();
 	});
-
+	// обертка над it, beforeEach, afterEach, выводить логи и скриншот (скриншот на всю высоту приложения, аттач скрин (средствами плейврайта) к аллюру, конфиг папки выхода репортов)
 	describe("Check-in to the app as new user", async () => {
 		it("should check-in a new user and redirect him to Tables page", async () => {
 			const loginPage = new LoginPage(page);

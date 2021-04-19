@@ -6,7 +6,7 @@ function step(stepName) {
 
 		descriptor.value = function (...args) {
 			let localStepName = stepName;
-			localStepName = "\n" + (typeof localStepName === "string" ? localStepName : localStepName(this.name));
+			localStepName = "\n" + (typeof localStepName === "string" ? localStepName : localStepName(this.__id));
 
 			if (this.constructor.name.includes("Element")) {
 				localStepName = `\t ${localStepName} arguments ${JSON.stringify(args)}`;

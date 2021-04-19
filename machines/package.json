@@ -12,7 +12,7 @@
     "backend:dev": "nodemon ./server/index.js",
     "build": "webpack --production",
     "build:image": "webpack --production && docker build -t potapovdim/application:v1 -f ./docker/Dockerfile .",
-    "test:mocha": "mocha ./testing/**/*.spec.js --require @babel/register --timeout 15000 --reporter mocha-allure-reporter --reporter-options targetDir=./testing/allure/allure-results",
+    "test:mocha": "mocha ./testing/**/*.spec.js --require @babel/register --timeout 15000 --reporter allure-mocha --reporter-options targetDir=./testing/allure/allure-results",
     "report": "allure generate ./testing/allure/allure-results -c -o ./testing/allure/allure-report && allure open ./testing/allure/allure-report",
     "report:clear": "rm -rf rm -rf ./testing/allure/allure-results && rm -rf ./testing/allure/allure-report"
   },
@@ -38,7 +38,6 @@
     "eslint": "^6.8.0",
     "html-webpack-plugin": "^3.2.0",
     "mocha": "^8.3.2",
-    "mocha-allure-reporter": "^1.4.0",
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.3",
     "playwright": "^1.10.0",
