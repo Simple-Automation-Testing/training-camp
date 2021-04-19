@@ -12,8 +12,9 @@
     "backend:dev": "nodemon ./server/index.js",
     "build": "webpack --production",
     "build:image": "webpack --production && docker build -t potapovdim/application:v1 -f ./docker/Dockerfile .",
-    "test:mocha": "mocha ./testing/**/*.spec.js --require @babel/register --timeout 15000 --reporter allure-mocha --reporter-options targetDir=./testing/allure/allure-results",
-    "report": "allure generate ./testing/allure/allure-results -c -o ./testing/allure/allure-report && allure open ./testing/allure/allure-report",
+    "test:mocha": "mocha",
+    "report:serve": "allure serve ./testing/allure/allure-results",
+    "report:generate": "allure generate ./testing/allure/allure-results -c -o ./testing/allure/allure-report && allure open ./testing/allure/allure-report",
     "report:clear": "rm -rf rm -rf ./testing/allure/allure-results && rm -rf ./testing/allure/allure-report"
   },
   "author": "",
