@@ -1,5 +1,6 @@
 const { Page } = require("../../lib/base/pages/page");
 const { Container, Button, Input } = require("../../lib/index");
+const { step } = require("../../lib/report");
 
 class AdminPage extends Page {
 	static TITLE = `//h3[contains(text(),"Кабінет адміністратора, Привіт")]`;
@@ -17,7 +18,7 @@ class AdminPage extends Page {
 	static DETAIL_BUTTON = `//button[text()="Деталі"]`;
 
 	constructor(page) {
-		super(page);
+		super(page, "Tables page");
 		this.title = new Container(AdminPage.TITLE, "Title of admin page", page);
 		this.createNewUserButton = new Button(AdminPage.CREATE_USER_BUTTON, "Create new user form button", page);
 		this.listUsersButton = new Button(AdminPage.LIST_OF_USERS_BUTTON, "List existing users button", page);
@@ -32,10 +33,12 @@ class AdminPage extends Page {
 		this.detailButton = null;
 	}
 
+	@step((name) => `${name} executes getTitle`)
 	async getTitle() {
 		return await this.title.getText();
 	}
 
+	@step((name) => `${name} executes createUser`)
 	async createUser(options) {
 		await this.createNewUserButton.click();
 		await this.username.sendKeys(options.username);
@@ -48,12 +51,14 @@ class AdminPage extends Page {
 		await this.createNewUser.click();
 	}
 
+	@step((name) => `${name} check isUserExistInArray`)
 	async isUserExistInArray(username) {
 		await this.listUsersButton.click();
 		const usernamesArray = await this.usersList.getArrayOfTextcontentFromListOfItems(AdminPage.USER_NAME_ITEM);
 		return usernamesArray.includes(username);
 	}
 
+	@step((name) => `${name} check isUserAdmin`)
 	async isUserAdmin(userName) {
 		await this.listUsersButton.click();
 		const usernamesArray = await this.usersList.getArrayOfTextcontentFromListOfItems(AdminPage.USER_NAME_ITEM);
