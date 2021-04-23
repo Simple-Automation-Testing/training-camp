@@ -1,23 +1,31 @@
-const { chromium, firefox, webkit } = require("playwright");
+//const { chromium, firefox, webkit } = require("playwright");
+const { browserInterface } = require("./../lib/base/browser/index");
 const { LoginPage, TablesPage, AdminPage } = require("./../framework/pages/index");
 const { expect } = require("chai");
+const { wrappedBeforeEach, wrappedIt, wrappedAfterEach } = require("../lib/runner/runner");
 
 describe("Login file", () => {
 	let browser = null;
 	let context = null;
 	let page = null;
 
+	//@wrappedBeforeEach(name => `${name} executes beforeEach`)
 	beforeEach(async () => {
-		browser = await chromium.launch({ headless: false, slowMo: 50 });
-		context = await browser.newContext();
-		page = await context.newPage();
+		browser = await browserInterface.initBrowser("chromium", { headless: false, slowMo: 50 });
+		context = await browserInterface.createNewContext(browser);
+		await browserInterface.setStorage(context);
+		page = await browserInterface.createNewPage(context);
 	});
 
+	//@wrappedAfterEach(name => `${name} executes afterEach`)
 	afterEach(async () => {
-		await browser.close();
+		// await browserInterface.createScreenshot();
+		// console.log(await browserInterface.getCurrentUrl());
+		await browserInterface.closeBrowser(browser);
 	});
-	// обертка над it, beforeEach, afterEach, выводить логи и скриншот (скриншот на всю высоту приложения, аттач скрин (средствами плейврайта) к аллюру, конфиг папки выхода репортов)
+
 	describe("Check-in to the app as new user", async () => {
+		//@wrappedIt(name => `${name} executes it`);
 		it("should check-in a new user and redirect him to Tables page", async () => {
 			const loginPage = new LoginPage(page);
 			await loginPage.open();
@@ -68,7 +76,7 @@ describe("Login file", () => {
 			expect(await adminPage.isUserExistInArray("anav1")).to.be.true;
 		});
 
-		it("should create new user with role Admin", async () => {
+		it.only("should create new user with role Admin", async () => {
 			const loginPage = new LoginPage(page);
 			await loginPage.open();
 			await loginPage.login({ name: "admin", password: "admin" });
@@ -79,7 +87,7 @@ describe("Login file", () => {
 			const adminPage = new AdminPage(page);
 			await adminPage.createUser({ username: "anav2", name: "andrei", email: "anav2@gmail.com", password: "andrei2", isAdmin: true });
 			expect(await adminPage.isUserExistInArray("anav2")).to.be.true;
-			expect(await adminPage.isUserAdmin("anav2")).to.be.true;
+			expect(await adminPage.isUserAdmin("anav3")).to.be.true;
 		});
 	});
 });
