@@ -4,5 +4,5 @@ module.exports = {
 	reporter: "allure-mocha",
 	reporterOptions: ["resultsDir=./testing/allure/allure-results"],
 	spec: ["./testing/**/*.spec.js"],
-	retries: 1,
+	retries: 0,
 };
