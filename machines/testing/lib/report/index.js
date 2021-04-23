@@ -6,17 +6,23 @@ function step(stepName) {
 
 		descriptor.value = function (...args) {
 			let localStepName = stepName;
-			localStepName = "\n" + (typeof localStepName === "string" ? localStepName : localStepName(this.__id));
+			localStepName = typeof localStepName === "string" ? localStepName : localStepName(this.__id);
 
-			if (this.constructor.name.includes("Element")) {
-				localStepName = `\t ${localStepName} arguments ${JSON.stringify(args)}`;
+			if (Object.getPrototypeOf(Object.getPrototypeOf(this)).constructor.name.includes("Element")) {
+				localStepName = `${localStepName} ${args[0] ? `with argument: ${JSON.stringify(args[0])}` : " "}`;
+			}
+
+			if (Object.getPrototypeOf(Object.getPrototypeOf(this)).constructor.name.includes("Page")) {
+				localStepName = `${localStepName} ${args[0] ? `with argument: ${JSON.stringify(args[0])}` : " "}`;
 			}
 
 			if (this.constructor.name.includes("Browser")) {
-				localStepName = `${localStepName}  ${args[0] ? args[0] : ""}`;
+				localStepName = `${localStepName} ${JSON.stringify(args)}`;
 			}
+
 			return stepAllure(localStepName, originalValue.bind(this, ...args));
 		};
+
 		return descriptor;
 	};
 }
