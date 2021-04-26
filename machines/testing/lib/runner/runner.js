@@ -5,8 +5,7 @@ function wrapedTest(cb) {
 		try {
 			await cb();
 		} catch (error) {
-			console.log("wrapped test");
-			//await browserInterace.attachAllureScreenshot();
+			await browserInterface.attachAllureScreenshot();
 			throw error;
 		}
 	};
