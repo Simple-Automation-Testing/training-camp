@@ -1,27 +1,28 @@
-//const { chromium, firefox, webkit } = require("playwright");
-const { browserInterface } = require("./../lib/base/browser/index");
+const { provider } = require("./../framework/index");
+const { browser } = provider;
 const { LoginPage, TablesPage, AdminPage } = require("./../framework/pages/index");
-const { expect } = require("chai");
-const { wrappedBeforeEach, wrappedIt, wrappedAfterEach } = require("../lib/runner/runner");
+//const { expect } = require("chai");
+const { expect } = provider.packages;
+const { it, beforeEach, afterEach } = provider.testRunner;
 
 describe("Login file", () => {
-	let browser = null;
+	let browserInstance = null;
 	let context = null;
 	let page = null;
 
 	//@wrappedBeforeEach(name => `${name} executes beforeEach`)
 	beforeEach(async () => {
-		browser = await browserInterface.initBrowser("chromium", { headless: false, slowMo: 50 });
-		context = await browserInterface.createNewContext(browser);
-		await browserInterface.setStorage(context);
-		page = await browserInterface.createNewPage(context);
+		browserInstance = await browser.initBrowser("chromium", { headless: false, slowMo: 50 });
+		context = await browser.createNewContext(browserInstance);
+		await browser.setStorage(context);
+		page = await browser.createNewPage(context);
 	});
 
 	//@wrappedAfterEach(name => `${name} executes afterEach`)
 	afterEach(async () => {
-		// await browserInterface.createScreenshot();
+		await browser.createScreenshot();
 		// console.log(await browserInterface.getCurrentUrl());
-		await browserInterface.closeBrowser(browser);
+		await browser.closeBrowser(browserInstance);
 	});
 
 	describe("Check-in to the app as new user", async () => {
@@ -76,7 +77,7 @@ describe("Login file", () => {
 			expect(await adminPage.isUserExistInArray("anav1")).to.be.true;
 		});
 
-		it.only("should create new user with role Admin", async () => {
+		it("should create new user with role Admin", async () => {
 			const loginPage = new LoginPage(page);
 			await loginPage.open();
 			await loginPage.login({ name: "admin", password: "admin" });
