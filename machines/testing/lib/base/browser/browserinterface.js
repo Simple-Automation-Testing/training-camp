@@ -36,7 +36,8 @@ class Browser {
 	 */
 	//@step("Browser create new browser context")
 	async createNewContext(browser) {
-		return await browser.newContext();
+		this.context = await browser.newContext();
+		return this.context;
 	}
 
 	/**
@@ -44,7 +45,8 @@ class Browser {
 	 */
 	//@step("Context creates newPage")
 	async createNewPage(context) {
-		return await context.newPage();
+		this.page = await context.newPage();
+		return this.page;
 	}
 
 	/**
@@ -58,7 +60,7 @@ class Browser {
 	 * @public
 	 */
 	async createScreenshot() {
-		await this.page.screenshot({ path: `../allure/screenshots/screen-${await currentTime()}.png` });
+		return await this.page.screenshot({ path: `./testing/allure/screenshots/screen-${await currentTime()}.png`, fullPage: true });
 	}
 
 	/**
@@ -72,10 +74,9 @@ class Browser {
 	async attachAllureScreenshot(name = "Screenshot") {
 		const png = await this.createScreenshot();
 		const url = await this.getCurrentUrl();
-
 		const lsData = await this.page.evaluate(() => window.localStorage);
 		await attachJsonData("Current local storage data", JSON.stringify(lsData));
-		await attachScreenshot(`${name} currnet url: ${url}`, png);
+		await attachScreenshot(`${(name = "Screenshot")} current url: ${url}`, png);
 	}
 }
 

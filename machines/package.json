@@ -15,7 +15,7 @@
     "test:mocha": "mocha",
     "report:serve": "allure serve ./testing/allure/allure-results",
     "report:generate": "allure generate ./testing/allure/allure-results -c -o ./testing/allure/allure-report && allure open ./testing/allure/allure-report",
-    "report:clear": "rm -rf rm -rf ./testing/allure/allure-results && rm -rf ./testing/allure/allure-report"
+    "report:clear": "rm -rf rm -rf ./testing/allure/allure-results && rm -rf ./testing/allure/allure-report && rm -rf ./testing/allure/screenshots"
   },
   "author": "",
   "license": "ISC",
