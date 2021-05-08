@@ -1,4 +1,5 @@
 const { Element } = require("./element");
+const { step } = require("../../report");
 
 class Container extends Element {
 	constructor(selector, name, page) {
@@ -16,6 +17,7 @@ class Container extends Element {
 	/**
 	 * @public
 	 */
+	@step((name) => `${name} executes getText`)
 	async getText() {
 		await this._initRootElement();
 		return await this.__rootElement.textContent();
@@ -24,6 +26,7 @@ class Container extends Element {
 	/**
 	 * @public
 	 */
+	@step((name) => `${name} executes getArrayOfTextcontentFromListOfItems`)
 	async getArrayOfTextcontentFromListOfItems(singleItemLocator) {
 		await this._initRootElement();
 		return await this.__rootElement.$$eval(singleItemLocator, (nodes) => {

@@ -1,6 +1,7 @@
 class Page {
-	constructor(page) {
+	constructor(page, name) {
 		this.page = page;
+		this.__id = name;
 	}
 }
 

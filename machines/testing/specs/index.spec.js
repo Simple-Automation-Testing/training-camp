@@ -1,20 +1,23 @@
-const { chromium, firefox, webkit } = require("playwright");
-const { LoginPage, TablesPage, AdminPage } = require("./framework/pages/index");
-const { expect } = require("chai");
+const { provider } = require("./../framework/index");
+const { browser } = provider;
+const { LoginPage, TablesPage, AdminPage } = require("./../framework/pages/index");
+const { expect } = provider.packages;
+const { it, beforeEach, afterEach } = provider.testRunner;
 
 describe("Login file", () => {
-	let browser = null;
+	let browserInstance = null;
 	let context = null;
 	let page = null;
 
-	beforeEach(async () => {
-		browser = await chromium.launch({ headless: false, slowMo: 50 });
-		context = await browser.newContext();
-		page = await context.newPage();
+	beforeEach("Executes beforeEach", async () => {
+		browserInstance = await browser.initBrowser("chromium", { headless: false, slowMo: 50 });
+		context = await browser.createNewContext(browserInstance);
+		await browser.setStorage(context);
+		page = await browser.createNewPage(context);
 	});
 
-	afterEach(async () => {
-		await browser.close();
+	afterEach("Executes afterEach", async () => {
+		await browser.closeBrowser(browserInstance);
 	});
 
 	describe("Check-in to the app as new user", async () => {
@@ -25,7 +28,7 @@ describe("Login file", () => {
 			await loginPage.checkIn({ username: "anav", name: "andrei", email: "anav@gmail.com", password: "andrei" });
 
 			const tablePage = new TablesPage(page);
-			expect(await tablePage.getTitle()).to.equal("Таблиці, Привіт anav");
+			expect(await tablePage.getTitle()).toEqual("Таблиці, Привіт anav");
 		});
 	});
 
@@ -36,7 +39,7 @@ describe("Login file", () => {
 			await loginPage.login({ name: "admin", password: "admin" });
 
 			const tablePage = new TablesPage(page);
-			expect(await tablePage.getTitle()).to.equal("Таблиці, Привіт admin");
+			expect(await tablePage.getTitle()).toEqual("Таблиці, Привіт admin");
 		});
 	});
 
@@ -50,7 +53,7 @@ describe("Login file", () => {
 			await tablePage.toAdminPage();
 
 			const adminPage = new AdminPage(page);
-			expect(await adminPage.getTitle()).to.equal("Кабінет адміністратора, Привіт admin");
+			expect(await adminPage.getTitle()).toEqual("Кабінет адміністратора, Привіт admin");
 		});
 	});
 
@@ -65,7 +68,7 @@ describe("Login file", () => {
 
 			const adminPage = new AdminPage(page);
 			await adminPage.createUser({ username: "anav1", name: "andrei", email: "anav1@gmail.com", password: "andrei1" });
-			expect(await adminPage.isUserExistInArray("anav1")).to.be.true;
+			expect(await adminPage.isUserExistInArray("anav1")).toEqual(true);
 		});
 
 		it("should create new user with role Admin", async () => {
@@ -78,8 +81,8 @@ describe("Login file", () => {
 
 			const adminPage = new AdminPage(page);
 			await adminPage.createUser({ username: "anav2", name: "andrei", email: "anav2@gmail.com", password: "andrei2", isAdmin: true });
-			expect(await adminPage.isUserExistInArray("anav2")).to.be.true;
-			expect(await adminPage.isUserAdmin("anav2")).to.be.true;
+			expect(await adminPage.isUserExistInArray("anav2")).toEqual(false);
+			expect(await adminPage.isUserAdmin("anav2")).toEqual(false);
 		});
 	});
 });
