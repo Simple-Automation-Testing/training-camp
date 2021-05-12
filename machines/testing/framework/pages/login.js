@@ -12,16 +12,16 @@ class LoginPage extends Page {
 	static EMAIL_FIELD = `//input[@placeholder="Імейл"]`;
 	static CHECKIN_BUTTON = `(//button[text()="Зареєструватися"])[2]`;
 
-	constructor(page) {
-		super(page);
-		this.menuSignin = new Button(LoginPage.MENU_SIGNIN, "Menu signin button", page);
-		this.menuCheckin = new Button(LoginPage.MENU_CHECKIN, "Menu checkin button", page);
-		this.username = new Input(LoginPage.USERNAME_FIELD, "User name field", page);
-		this.name = new Input(LoginPage.NAME_FIELD, "Name field", page);
-		this.password = new Input(LoginPage.PASSWORD_FIELD, "Password field", page);
-		this.signin = new Button(LoginPage.SIGNIN_BUTTON, "Signin button", page);
-		this.email = new Input(LoginPage.EMAIL_FIELD, "Email field", page);
-		this.checkin = new Button(LoginPage.CHECKIN_BUTTON, "Checkin button", page);
+	constructor() {
+		super("Login page");
+		this.menuSignin = new Button(LoginPage.MENU_SIGNIN, "Menu signin button", this.page);
+		this.menuCheckin = new Button(LoginPage.MENU_CHECKIN, "Menu checkin button", this.page);
+		this.username = new Input(LoginPage.USERNAME_FIELD, "User name field", this.page);
+		this.name = new Input(LoginPage.NAME_FIELD, "Name field", this.page);
+		this.password = new Input(LoginPage.PASSWORD_FIELD, "Password field", this.page);
+		this.signin = new Button(LoginPage.SIGNIN_BUTTON, "Signin button", this.page);
+		this.email = new Input(LoginPage.EMAIL_FIELD, "Email field", this.page);
+		this.checkin = new Button(LoginPage.CHECKIN_BUTTON, "Checkin button", this.page);
 	}
 
 	async open() {
