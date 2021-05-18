@@ -1,4 +1,5 @@
 const { stepAllure, attachScreenshot, attachJsonData } = require("./allure");
+const { ContentType } = require("allure-js-commons");
 
 function step(stepName) {
 	return function (_target, _name, descriptor) {
@@ -27,8 +28,23 @@ function step(stepName) {
 	};
 }
 
+function allureStep(stepAssertionName, error, current, expected) {
+	const { allure } = require("allure-mocha/runtime");
+	const step = allure.startStep(stepAssertionName);
+	allure.attachment("Expected value", JSON.stringify(expected, null, 2), ContentType.JSON);
+	allure.attachment("Current value", JSON.stringify(current, null, 2), ContentType.JSON);
+	if (error) {
+		allure.attachment("Error", JSON.stringify(error, null, 2), ContentType.JSON);
+		step.step.stepResult.status = "failed";
+		return step.endStep();
+	}
+	step.step.stepResult.status = "passed";
+	return step.endStep();
+}
+
 module.exports = {
 	step,
 	attachScreenshot,
 	attachJsonData,
+	allureStep,
 };
