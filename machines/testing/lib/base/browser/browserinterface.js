@@ -16,6 +16,7 @@ class Browser {
 	async initBrowser(browser, options = {}) {
 		if (browser in playwright) {
 			this.instance = await playwright[browser].launch(options);
+			this.__id = browser;
 			this.context = await this.instance.newContext();
 			await this.context.storageState();
 			this.page = await this.context.newPage();
@@ -27,7 +28,7 @@ class Browser {
 	/**
 	 * @public
 	 */
-	@step(`Browser closed`)
+	@step((name) => `Browser ${name} closed`)
 	async closeBrowser() {
 		await this.instance.close();
 	}
