@@ -17,7 +17,7 @@ function step(stepName) {
 			}
 
 			if (this.constructor.name.includes("Browser")) {
-				localStepName = `${localStepName} ${JSON.stringify(args)}`;
+				localStepName = `${localStepName} ${args[0] ? `with argument: ${JSON.stringify(args)}` : " "}`;
 			}
 
 			return stepAllure(localStepName, originalValue.bind(this, ...args));

@@ -1,59 +1,36 @@
-const { chromium, firefox, webkit } = require("playwright");
+const playwright = require("playwright");
 const { step, attachScreenshot, attachJsonData } = require("../../report");
 const { currentTime } = require("../../utils/currenttime");
-
+const { aggregator } = require("../../utils/aggregator");
 class Browser {
+	constructor() {
+		this.instance = null;
+		this.context = null;
+		this.page = null;
+	}
+
 	/**
 	 * @public
 	 */
-	//@step(`Browser created`)
-	async initBrowser(browser, options) {
-		switch (browser) {
-			case "chromium":
-				return await chromium.launch(options);
-				break;
-			case "firefox":
-				return await firefox.launch(options);
-				break;
-			case "webkit":
-				return await webkit.launch(options);
-				break;
-			case "ffmpeg":
-				return await ffmpeg.launch(options);
-				break;
-			default:
-				throw new Error(`There is no such ${browser}`);
+	@step(`Init Browser, Context, Page`)
+	async initBrowser(browser, options = {}) {
+		if (browser in playwright) {
+			this.instance = await playwright[browser].launch(options);
+			this.__id = browser;
+			this.context = await this.instance.newContext();
+			await this.context.storageState();
+			this.page = await this.context.newPage();
 		}
-	}
-
-	@step(`Browser closed`)
-	async closeBrowser(browser) {
-		await browser.close();
-	}
-
-	/**
-	 * @public
-	 */
-	//@step("Browser create new browser context")
-	async createNewContext(browser) {
-		this.context = await browser.newContext();
-		return this.context;
-	}
-
-	/**
-	 * @public
-	 */
-	//@step("Context creates newPage")
-	async createNewPage(context) {
-		this.page = await context.newPage();
+		aggregator.setPage(this.page);
 		return this.page;
 	}
 
 	/**
 	 * @public
 	 */
-	async setStorage(context) {
-		await context.storageState();
+	@step((name) => `Browser ${name} closed`)
+	async closeBrowser() {
+		await this.instance.close();
 	}
 
 	/**

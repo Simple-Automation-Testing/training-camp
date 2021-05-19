@@ -17,19 +17,19 @@ class AdminPage extends Page {
 	static IS_ADMIN_CHECKBOX = `//input[@type="checkbox"]`;
 	static DETAIL_BUTTON = `//button[text()="Деталі"]`;
 
-	constructor(page) {
-		super(page, "Tables page");
-		this.title = new Container(AdminPage.TITLE, "Title of admin page", page);
-		this.createNewUserButton = new Button(AdminPage.CREATE_USER_BUTTON, "Create new user form button", page);
-		this.listUsersButton = new Button(AdminPage.LIST_OF_USERS_BUTTON, "List existing users button", page);
-		this.username = new Input(AdminPage.USERNAME_FIELD, "User name field", page);
-		this.name = new Input(AdminPage.NAME_FIELD, "Name field", page);
-		this.password = new Input(AdminPage.PASSWORD_FIELD, "Password field", page);
-		this.email = new Input(AdminPage.EMAIL_FIELD, "Email field", page);
-		this.password = new Input(AdminPage.PASSWORD_FIELD, "Password field", page);
-		this.createNewUser = new Button(AdminPage.CREATE_BUTTON, "Create new user button", page);
-		this.usersList = new Container(AdminPage.LIST_OF_USERS_DIV, "List of existing users", page);
-		this.isAdmin = new Input(AdminPage.IS_ADMIN_CHECKBOX, "Checkbox is user admin", page);
+	constructor() {
+		super("Admin page");
+		this.title = new Container(AdminPage.TITLE, "Title of admin page", this.page);
+		this.createNewUserButton = new Button(AdminPage.CREATE_USER_BUTTON, "Create new user form button", this.page);
+		this.listUsersButton = new Button(AdminPage.LIST_OF_USERS_BUTTON, "List existing users button", this.page);
+		this.username = new Input(AdminPage.USERNAME_FIELD, "User name field", this.page);
+		this.name = new Input(AdminPage.NAME_FIELD, "Name field", this.page);
+		this.password = new Input(AdminPage.PASSWORD_FIELD, "Password field", this.page);
+		this.email = new Input(AdminPage.EMAIL_FIELD, "Email field", this.page);
+		this.password = new Input(AdminPage.PASSWORD_FIELD, "Password field", this.page);
+		this.createNewUser = new Button(AdminPage.CREATE_BUTTON, "Create new user button", this.page);
+		this.usersList = new Container(AdminPage.LIST_OF_USERS_DIV, "List of existing users", this.page);
+		this.isAdmin = new Input(AdminPage.IS_ADMIN_CHECKBOX, "Checkbox is user admin", this.page);
 		this.detailButton = null;
 	}
 

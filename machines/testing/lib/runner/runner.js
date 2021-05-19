@@ -29,8 +29,22 @@ function wrappedAfterEach(name, cb) {
 	});
 }
 
+function wrappedBeforeAll(name, cb) {
+	global.before(name, async function () {
+		await wrapedTest(cb).call(this);
+	});
+}
+
+function wrappedAfterAll(name, cb) {
+	global.after(name, async function () {
+		await wrapedTest(cb).call(this);
+	});
+}
+
 module.exports = {
 	wrappedBeforeEach,
 	wrappedIt,
 	wrappedAfterEach,
+	wrappedBeforeAll,
+	wrappedAfterAll,
 };

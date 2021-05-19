@@ -5,10 +5,10 @@ class TablesPage extends Page {
 	static TITLE = `//h3[contains(text(),"Таблиці, Привіт")]`;
 	static MENU_ADMIN_CABINET = `//button[text()="До адмін кабінету"]`;
 
-	constructor(page) {
-		super(page, "Tables page");
-		this.title = new Container(TablesPage.TITLE, "Title of table page", page);
-		this.adminCabinet = new Button(TablesPage.MENU_ADMIN_CABINET, "Menu admin cabinet button", page);
+	constructor() {
+		super("Tables page");
+		this.title = new Container(TablesPage.TITLE, "Title of table page", this.page);
+		this.adminCabinet = new Button(TablesPage.MENU_ADMIN_CABINET, "Menu admin cabinet button", this.page);
 	}
 
 	@step((name) => `${name} executes getTitle`)

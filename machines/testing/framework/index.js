@@ -1,8 +1,7 @@
-//const { allure } = require("allure-mocha/runtime");
 const { ContentType } = require("allure-js-commons");
 const { browserInterface } = require("./../lib/base/browser/index");
 const { expect, initStepDeclarator } = require("assertior");
-const { wrappedIt, wrappedBeforeEach, wrappedAfterEach } = require("./../lib/runner/runner");
+const { wrappedIt, wrappedBeforeEach, wrappedAfterEach, wrappedBeforeAll, wrappedAfterAll } = require("./../lib/runner/runner");
 
 function allureStep(stepAssertionName, error, current, expected) {
 	const { allure } = require("allure-mocha/runtime");
@@ -32,6 +31,8 @@ const provider = {
 			it: wrappedIt,
 			beforeEach: wrappedBeforeEach,
 			afterEach: wrappedAfterEach,
+			beforeAll: wrappedBeforeAll,
+			afterAll: wrappedAfterAll,
 		};
 	},
 };

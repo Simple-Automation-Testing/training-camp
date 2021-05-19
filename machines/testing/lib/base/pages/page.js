@@ -1,6 +1,7 @@
+const { aggregator } = require("../../utils/aggregator");
 class Page {
-	constructor(page, name) {
-		this.page = page;
+	constructor(name) {
+		this.page = aggregator.getPage();
 		this.__id = name;
 	}
 }
