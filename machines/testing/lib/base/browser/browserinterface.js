@@ -48,7 +48,7 @@ class Browser {
 	}
 
 	@step("Attach fail condition")
-	async attachAllureScreenshot(name = "Screenshot") {
+	async attachFailConditions(name = "Screenshot") {
 		const png = await this.createScreenshot();
 		const url = await this.getCurrentUrl();
 		const lsData = await this.page.evaluate(() => window.localStorage);
