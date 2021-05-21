@@ -5,7 +5,28 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Attach",
+      "args": [
+        "--timeout", "999999",
+        "--colors",
+        "${workspaceFolder}/testing/**/*.spec.js"
+      ],
+      "name": "Run debugging Mocha",
+      "type": "pwa-node",
+      "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+      "request": "launch",
+      "cwd": "${workspaceRoot}",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": [
+        "${workspaceFolder}/node_modules/**/*.js",
+        "<node_internals>/**/*.js"
+      ],
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
+    },
+    {
+      "name": "Attach port",
       "port": 9229,
       "request": "attach",
       "skipFiles": [
@@ -14,11 +35,10 @@
       "type": "pwa-node"
     },
     {
-      "type": "pwa-chrome",
-      "request": "launch",
-      "name": "Launch Chrome against localhost",
-      "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}"
-    }
+      "type": "node",
+      "request": "attach",
+      "name": "Attach Node by ID",
+      "processId": "${command:PickProcess}",
+    },
   ]
 }
