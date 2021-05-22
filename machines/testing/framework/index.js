@@ -1,9 +1,6 @@
-const { allureStep } = require("./../lib/report");
 const { browserInterface } = require("./../lib/base/browser/index");
-const { expect, initStepDeclarator } = require("assertior");
+const { expect } = require("assertior");
 const { wrappedIt, wrappedBeforeEach, wrappedAfterEach, wrappedBeforeAll, wrappedAfterAll } = require("./../lib/runner/runner");
-
-initStepDeclarator(allureStep);
 
 const provider = {
 	get packages() {
