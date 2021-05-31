@@ -22,7 +22,7 @@ class LoginPage extends Page {
 		this.password = this.initElement(Input, LoginPage.PASSWORD_FIELD, "Password field");
 		this.signin = this.initElement(Button, LoginPage.SIGNIN_BUTTON, "Signin button");
 		this.email = this.initElement(Input, LoginPage.EMAIL_FIELD, "Email field");
-		this.checkin = this.initElement(Button, LoginPage.CHECKIN_BUTTON, "Checkin button");
+		this.buttonCheckin = this.initElement(Button, LoginPage.CHECKIN_BUTTON, "Checkin button");
 	}
 
 	@step(`Open login page`)
@@ -50,7 +50,7 @@ class LoginPage extends Page {
 		await this.name.sendKeys(options.name);
 		await this.email.sendKeys(options.email);
 		await this.password.sendKeys(options.password);
-		await this.checkin.click();
+		await this.buttonCheckin.click();
 	}
 
 	@step(`Login`)

@@ -50,17 +50,17 @@ class Browser {
 		return await this.page.url();
 	}
 
-	@step("Attach fail condition:") // куда его вынести из класса браузер? - вынести в репортинг
+	@step("Attach fail condition:") // вынести в репортинг
 	async attachFailConditions(name = "Screenshot") {
 		const png = await this.createScreenshot();
 		const url = await this.getCurrentUrl();
 		const lsData = await this.page.evaluate(() => window.localStorage);
 		if (REPORTER == "ALLURE") {
-			await attachJsonData("Current local storage data", JSON.stringify(lsData));
+			await attachJsonData("Current local storage data", JSON.stringify(lsData, null, 2));
 			await attachScreenshot(`${(name = "Screenshot")} current url: ${url}`, png);
 		}
 		if (REPORTER == "SPEC") {
-			await attachSpecJsonData("Current local storage data", JSON.stringify(lsData));
+			await attachSpecJsonData("Current local storage data", JSON.stringify(lsData, null, 2));
 			console.log(`\n\tError current url: \n\t\t${url}\n`);
 		}
 	}

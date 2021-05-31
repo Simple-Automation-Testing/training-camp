@@ -1,7 +1,5 @@
 const { stepAllure } = require("./allure");
-const Mocha = require("mocha");
-const { EVENT_RUN_BEGIN, EVENT_RUN_END, EVENT_TEST_FAIL, EVENT_TEST_PASS, EVENT_SUITE_BEGIN, EVENT_SUITE_END } = Mocha.Runner.constants;
-const { stepSpec, attachSpecJsonData } = require("./spec");
+const { stepSpec } = require("./spec");
 const { ContentType } = require("allure-js-commons");
 const { REPORTER } = process.env;
 const { initStepDeclarator } = require("assertior");
@@ -68,9 +66,6 @@ function reporterStep(stepAssertionName, error, current, expected) {
 		step.step.stepResult.status = "passed";
 		return step.endStep();
 	}
-	// if (REPORTER == "SPEC") { // дописать отступы
-	// return stepAssertionName;
-	// }
 }
 
 initStepDeclarator(reporterStep);
