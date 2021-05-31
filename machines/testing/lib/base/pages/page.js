@@ -8,6 +8,10 @@ class Page {
 	async waitForTime(timeout) {
 		await this.page.waitForTimeout(timeout);
 	}
+
+	initElement(elementClass, selector, selectorName) {
+		return new elementClass(selector, selectorName, this.page);
+	}
 }
 
 module.exports = { Page };

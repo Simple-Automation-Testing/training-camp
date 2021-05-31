@@ -22,22 +22,22 @@ class TablesPage extends Page {
 
 	constructor() {
 		super("Tables page");
-		this.title = new Container(TablesPage.TITLE, "Title of table page", this.page);
-		this.adminCabinet = new Button(TablesPage.MENU_ADMIN_CABINET, "Menu admin cabinet button", this.page);
-		this.addProducer = new Input(TablesPage.PRODUCER_ADD, "Add producer field", this.page);
-		this.addVolume = new Input(TablesPage.VOLUME_ADD, "Add volume field", this.page);
-		this.addLength = new Input(TablesPage.LENGTH_ADD, "Add length field", this.page);
-		this.addWidth = new Input(TablesPage.WIDTH_ADD, "Add width field", this.page);
-		this.addWeight = new Input(TablesPage.WEIGHT_ADD, "Add weight field", this.page);
-		this.addPower = new Input(TablesPage.POWER_ADD, "Add power field", this.page);
-		this.addPrice = new Input(TablesPage.PRICE_ADD, "Add price field", this.page);
-		this.addMachine = new Button(TablesPage.ADD_BUTTON, "Add machine button", this.page);
-		this.filterProducer = new Input(TablesPage.PRODUCER_FILTER, "Search producer field", this.page);
-		this.filterVolume = new Input(TablesPage.VOLUME_FILTER, "Search volume field", this.page);
-		this.filterPrice = new Input(TablesPage.PRICE_FILTER, "Search price field", this.page);
-		this.filterMachine = new Button(TablesPage.FILTER_BUTTON, "Filter machine button", this.page);
-		this.exit = new Button(TablesPage.LOGOUT_BUTTON, "Logout button", this.page);
-		this.machinesTable = new Container(TablesPage.LIST_OF_MACHINES_TABLE, "Table of machines", this.page);
+		this.title = this.initElement(Container, TablesPage.TITLE, "Title of table page");
+		this.adminCabinet = this.initElement(Button, TablesPage.MENU_ADMIN_CABINET, "Menu admin cabinet button");
+		this.addProducer = this.initElement(Input, TablesPage.PRODUCER_ADD, "Add producer field");
+		this.addVolume = this.initElement(Input, TablesPage.VOLUME_ADD, "Add volume field");
+		this.addLength = this.initElement(Input, TablesPage.LENGTH_ADD, "Add length field");
+		this.addWidth = this.initElement(Input, TablesPage.WIDTH_ADD, "Add width field");
+		this.addWeight = this.initElement(Input, TablesPage.WEIGHT_ADD, "Add weight field");
+		this.addPower = this.initElement(Input, TablesPage.POWER_ADD, "Add power field");
+		this.addPrice = this.initElement(Input, TablesPage.PRICE_ADD, "Add price field");
+		this.addMachine = this.initElement(Button, TablesPage.ADD_BUTTON, "Add machine button");
+		this.filterProducer = this.initElement(Input, TablesPage.PRODUCER_FILTER, "Search producer field");
+		this.filterVolume = this.initElement(Input, TablesPage.VOLUME_FILTER, "Search volume field");
+		this.filterPrice = this.initElement(Input, TablesPage.PRICE_FILTER, "Search price field");
+		this.filterMachine = this.initElement(Button, TablesPage.FILTER_BUTTON, "Filter machine button");
+		this.exit = this.initElement(Button, TablesPage.LOGOUT_BUTTON, "Logout button");
+		this.machinesTable = this.initElement(Container, TablesPage.LIST_OF_MACHINES_TABLE, "Table of machines");
 	}
 
 	@step((name) => `${name} executes getTitle`)
