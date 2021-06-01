@@ -50,7 +50,7 @@ class Browser {
 		return await this.page.url();
 	}
 
-	@step("Attach fail condition:") // вынести в репортинг
+	@step("ATTACH FAIL CONDITION:") // вынести в репортинг
 	async attachFailConditions(name = "Screenshot") {
 		const png = await this.createScreenshot();
 		const url = await this.getCurrentUrl();
@@ -60,8 +60,8 @@ class Browser {
 			await attachScreenshot(`${(name = "Screenshot")} current url: ${url}`, png);
 		}
 		if (REPORTER == "SPEC") {
-			await attachSpecJsonData("Current local storage data", JSON.stringify(lsData));
-			console.log(`\n\tError current url: \n\t\t${url}\n`);
+			//await attachSpecJsonData("Current local storage data", lsData);
+			console.log(`\tError current url: \n\t${url}`);
 		}
 	}
 }

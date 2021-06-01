@@ -33,7 +33,8 @@ function wrappedOnly(name, cb) {
 function wrappedBeforeEach(name, cb) {
 	global.beforeEach(name, async function () {
 		if (REPORTER == "SPEC") {
-			console.log(`\n\t${name}:`);
+			console.log(`${"***** ".repeat(15)}`);
+			console.log(`  ${name}:`);
 		}
 		await wrapedTest(cb).call(this);
 	});
@@ -42,7 +43,7 @@ function wrappedBeforeEach(name, cb) {
 function wrappedAfterEach(name, cb) {
 	global.afterEach(name, async function () {
 		if (REPORTER == "SPEC") {
-			console.log(`\n\t${name}:`);
+			console.log(`  ${name}:`);
 		}
 		await wrapedTest(cb).call(this);
 	});
@@ -51,7 +52,7 @@ function wrappedAfterEach(name, cb) {
 function wrappedBeforeAll(name, cb) {
 	global.before(name, async function () {
 		if (REPORTER == "SPEC") {
-			console.log(`\n\t${name}:`);
+			console.log(`  ${name}:`);
 		}
 		await wrapedTest(cb).call(this);
 	});
@@ -60,7 +61,7 @@ function wrappedBeforeAll(name, cb) {
 function wrappedAfterAll(name, cb) {
 	global.after(name, async function () {
 		if (REPORTER == "SPEC") {
-			console.log(`\n\t${name}:`);
+			console.log(`  ${name}:`);
 		}
 		await wrapedTest(cb).call(this);
 	});
