@@ -21,6 +21,15 @@ function wrappedIt(name, cb) {
 	});
 }
 
+function wrappedOnly(name, cb) {
+	global.it.only(name, async function () {
+		if (REPORTER == "SPEC") {
+			console.log(`\t`);
+		}
+		await wrapedTest(cb).call(this);
+	});
+}
+
 function wrappedBeforeEach(name, cb) {
 	global.beforeEach(name, async function () {
 		if (REPORTER == "SPEC") {
@@ -63,4 +72,5 @@ module.exports = {
 	wrappedAfterEach,
 	wrappedBeforeAll,
 	wrappedAfterAll,
+	wrappedOnly,
 };

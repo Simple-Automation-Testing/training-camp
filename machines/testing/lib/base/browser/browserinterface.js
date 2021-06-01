@@ -60,7 +60,7 @@ class Browser {
 			await attachScreenshot(`${(name = "Screenshot")} current url: ${url}`, png);
 		}
 		if (REPORTER == "SPEC") {
-			await attachSpecJsonData("Current local storage data", JSON.stringify(lsData, null, 2));
+			await attachSpecJsonData("Current local storage data", JSON.stringify(lsData));
 			console.log(`\n\tError current url: \n\t\t${url}\n`);
 		}
 	}

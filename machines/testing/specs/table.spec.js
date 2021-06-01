@@ -2,7 +2,7 @@ const { provider } = require("./../framework/index");
 const { browser } = provider;
 const { LoginPage, TablesPage, AdminPage } = require("./../framework/pages/index");
 const { expect } = provider.packages;
-const { it, beforeEach, afterEach } = provider.testRunner;
+const { it, only, beforeEach, afterEach } = provider.testRunner;
 
 describe("Tables sute", () => {
 	beforeEach("Executes beforeEach", async () => {
@@ -14,7 +14,7 @@ describe("Tables sute", () => {
 	});
 
 	describe("Add new machine to table", () => {
-		it("should login as admin and add a new machine", async () => {
+		only("should login as admin and add a new machine", async () => {
 			const loginPage = new LoginPage();
 			await loginPage.open();
 			await loginPage.login({ name: "admin", password: "admin" });

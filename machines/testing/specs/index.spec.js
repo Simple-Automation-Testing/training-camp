@@ -2,7 +2,7 @@ const { provider } = require("./../framework/index");
 const { browser } = provider;
 const { LoginPage, TablesPage, AdminPage } = require("./../framework/pages/index");
 const { expect } = provider.packages;
-const { it, beforeEach, afterEach } = provider.testRunner;
+const { it, only, beforeEach, afterEach } = provider.testRunner;
 
 describe("Login sute", () => {
 	beforeEach("Executes beforeEach", async () => {
@@ -14,7 +14,7 @@ describe("Login sute", () => {
 	});
 
 	describe("Login to the app as exisitng user", async () => {
-		it("should login an exisiting user and redirect him to Tables page", async () => {
+		only("should login an exisiting user and redirect him to Tables page", async () => {
 			const loginPage = new LoginPage();
 			await loginPage.open();
 			await loginPage.login({ name: "admin", password: "admin" });
