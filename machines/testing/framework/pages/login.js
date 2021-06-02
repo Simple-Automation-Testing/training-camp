@@ -1,5 +1,6 @@
 const { Page } = require("../../lib/base/pages/page");
 const { Input, Button } = require("../../lib/index");
+const { step } = require("../../lib/report");
 
 class LoginPage extends Page {
 	static LOGIN_URL = `http://localhost:8081/`;
@@ -24,10 +25,12 @@ class LoginPage extends Page {
 		this.checkin = new Button(LoginPage.CHECKIN_BUTTON, "Checkin button", this.page);
 	}
 
+	@step(`Open login page`)
 	async open() {
 		await this.page.goto(LoginPage.LOGIN_URL);
 	}
 
+	@step(`Switch between modal login forms`)
 	async switchTo(modalName) {
 		switch (modalName) {
 			case "checkin":
@@ -41,6 +44,7 @@ class LoginPage extends Page {
 		}
 	}
 
+	@step(`Check in`)
 	async checkIn(options) {
 		await this.username.sendKeys(options.username);
 		await this.name.sendKeys(options.name);
@@ -49,6 +53,7 @@ class LoginPage extends Page {
 		await this.checkin.click();
 	}
 
+	@step(`Login`)
 	async login(options) {
 		await this.username.sendKeys(options.name);
 		await this.password.sendKeys(options.password);

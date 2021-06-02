@@ -1,7 +1,10 @@
 const playwright = require("playwright");
-const { step, attachScreenshot, attachJsonData } = require("../../report");
+const { step } = require("../../report");
+const { attachScreenshot, attachJsonData } = require("../../report/allure");
+const { attachSpecJsonData } = require("../../report/spec");
 const { currentTime } = require("../../utils/currenttime");
 const { aggregator } = require("../../utils/aggregator");
+const { REPORTER } = process.env;
 class Browser {
 	constructor() {
 		this.instance = null;
@@ -47,13 +50,19 @@ class Browser {
 		return await this.page.url();
 	}
 
-	@step("Attach fail condition")
-	async attachAllureScreenshot(name = "Screenshot") {
+	@step("Attach fail condition:") // куда его вынести из класса браузер? - вынести в репортинг
+	async attachFailConditions(name = "Screenshot") {
 		const png = await this.createScreenshot();
 		const url = await this.getCurrentUrl();
 		const lsData = await this.page.evaluate(() => window.localStorage);
-		await attachJsonData("Current local storage data", JSON.stringify(lsData));
-		await attachScreenshot(`${(name = "Screenshot")} current url: ${url}`, png);
+		if (REPORTER == "ALLURE") {
+			await attachJsonData("Current local storage data", JSON.stringify(lsData));
+			await attachScreenshot(`${(name = "Screenshot")} current url: ${url}`, png);
+		}
+		if (REPORTER == "SPEC") {
+			await attachSpecJsonData("Current local storage data", JSON.stringify(lsData));
+			console.log(`\n\tError current url: \n\t\t${url}\n`);
+		}
 	}
 }
 

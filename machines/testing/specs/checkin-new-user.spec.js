@@ -1,8 +1,8 @@
 const { provider } = require("./../framework/index");
 const { browser } = provider;
-const { LoginPage, TablesPage, AdminPage } = require("./../framework/pages/index");
+const { LoginPage, TablesPage } = require("./../framework/pages/index");
 const { expect } = provider.packages;
-const { it, beforeEach, afterEach, beforeAll, afterAll } = provider.testRunner;
+const { it, beforeAll, afterAll } = provider.testRunner;
 
 describe("Login sute", () => {
 	beforeAll("Executes beforeEach", async () => {
