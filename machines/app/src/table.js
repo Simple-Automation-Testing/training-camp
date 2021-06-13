@@ -239,7 +239,7 @@ class SternMachineTable extends Component {
           <h3>Таблиці, Привіт {user.username}</h3>
           <Link to="/analytics"><button className="btn btn-primary">До аналітики</button></Link>
           <Link to='/combaines'><button className="btn btn-primary">До комбайнів</button></Link>
-          {isAdmin && <Link to="/admin"><button className="btn btn-primary">До адмін кабінету</button></Link>}
+          {isAdmin && <Link to="/admin" target="_blank" rel="noopener noreferrer"><button className="btn btn-primary">До адмін кабінету</button></Link>}
           <button className="btn btn-primary logout" onClick={() => {
             localStorage.clear()
             window.history.go(0)
