@@ -19,17 +19,17 @@ class AdminPage extends Page {
 
 	constructor() {
 		super("Admin page");
-		this.title = new Container(AdminPage.TITLE, "Title of admin page", this.page);
-		this.createNewUserButton = new Button(AdminPage.CREATE_USER_BUTTON, "Create new user form button", this.page);
-		this.listUsersButton = new Button(AdminPage.LIST_OF_USERS_BUTTON, "List existing users button", this.page);
-		this.username = new Input(AdminPage.USERNAME_FIELD, "User name field", this.page);
-		this.name = new Input(AdminPage.NAME_FIELD, "Name field", this.page);
-		this.password = new Input(AdminPage.PASSWORD_FIELD, "Password field", this.page);
-		this.email = new Input(AdminPage.EMAIL_FIELD, "Email field", this.page);
-		this.password = new Input(AdminPage.PASSWORD_FIELD, "Password field", this.page);
-		this.createNewUser = new Button(AdminPage.CREATE_BUTTON, "Create new user button", this.page);
-		this.usersList = new Container(AdminPage.LIST_OF_USERS_DIV, "List of existing users", this.page);
-		this.isAdmin = new Input(AdminPage.IS_ADMIN_CHECKBOX, "Checkbox is user admin", this.page);
+		this.title = this.initElement(Container, AdminPage.TITLE, "Title of admin page");
+		this.createNewUserButton = this.initElement(Button, AdminPage.CREATE_USER_BUTTON, "Create new user form button");
+		this.listUsersButton = this.initElement(Button, AdminPage.LIST_OF_USERS_BUTTON, "List existing users button");
+		this.username = this.initElement(Input, AdminPage.USERNAME_FIELD, "User name field");
+		this.name = this.initElement(Input, AdminPage.NAME_FIELD, "Name field");
+		this.password = this.initElement(Input, AdminPage.PASSWORD_FIELD, "Password field");
+		this.email = this.initElement(Input, AdminPage.EMAIL_FIELD, "Email field");
+		this.password = this.initElement(Input, AdminPage.PASSWORD_FIELD, "Password field");
+		this.createNewUser = this.initElement(Button, AdminPage.CREATE_BUTTON, "Create new user button");
+		this.usersList = this.initElement(Container, AdminPage.LIST_OF_USERS_DIV, "List of existing users");
+		this.isAdmin = this.initElement(Input, AdminPage.IS_ADMIN_CHECKBOX, "Checkbox is user admin");
 		this.detailButton = null;
 	}
 
@@ -64,7 +64,7 @@ class AdminPage extends Page {
 		const usernamesArray = await this.usersList.getArrayOfTextcontentFromListOfItems(AdminPage.USER_NAME_ITEM);
 		let index = usernamesArray.indexOf(userName);
 		let indexAdminLocator = `(${AdminPage.USER_NAME_DETAILS})[${index + 1}]`;
-		this.detailButton = new Button(indexAdminLocator, "Detail button", this.page);
+		this.detailButton = this.initElement(Button, indexAdminLocator, "Detail button");
 		await this.detailButton.click();
 		return await this.isAdmin.isCheckboxChecked();
 	}

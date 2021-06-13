@@ -1,6 +1,6 @@
 const { browserInterface } = require("./../lib/base/browser/index");
 const { expect } = require("assertior");
-const { wrappedIt, wrappedBeforeEach, wrappedAfterEach, wrappedBeforeAll, wrappedAfterAll } = require("./../lib/runner/runner");
+const { wrappedIt, wrappedOnly, wrappedBeforeEach, wrappedAfterEach, wrappedBeforeAll, wrappedAfterAll } = require("./../lib/runner/runner");
 
 const provider = {
 	get packages() {

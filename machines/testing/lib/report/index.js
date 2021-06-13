@@ -1,7 +1,6 @@
 const { stepAllure } = require("./allure");
-const Mocha = require("mocha");
-const { EVENT_RUN_BEGIN, EVENT_RUN_END, EVENT_TEST_FAIL, EVENT_TEST_PASS, EVENT_SUITE_BEGIN, EVENT_SUITE_END } = Mocha.Runner.constants;
-const { stepSpec, attachSpecJsonData } = require("./spec");
+const { stepSpec } = require("./spec");
+const { color } = require("mocha/lib/reporters/base");
 const { ContentType } = require("allure-js-commons");
 const { REPORTER } = process.env;
 const { initStepDeclarator } = require("assertior");
@@ -19,7 +18,7 @@ function step(stepName) {
 					localStepName = `${localStepName} ${args[0] ? `with argument: ${JSON.stringify(args[0])}` : " "}`;
 				}
 				if (REPORTER == "SPEC") {
-					localStepName = `\t\t${localStepName} ${args[0] ? `with argument: ${JSON.stringify(args[0])}` : " "}`;
+					localStepName = `\t\t${localStepName} ${args[0] ? `with argument: \n\t\t${JSON.stringify(args[0])}` : " "}`;
 				}
 			}
 
@@ -28,7 +27,7 @@ function step(stepName) {
 					localStepName = `${localStepName} ${args[0] ? `with argument: ${JSON.stringify(args[0])}` : " "}`;
 				}
 				if (REPORTER == "SPEC") {
-					localStepName = `\t${localStepName} ${args[0] ? `with argument: ${JSON.stringify(args[0])}` : " "}`;
+					localStepName = `\t${localStepName} ${args[0] ? `with argument: \n\t${JSON.stringify(args[0])}` : " "}`;
 				}
 			}
 
@@ -37,7 +36,7 @@ function step(stepName) {
 					localStepName = `${localStepName} ${args[0] ? `with argument: ${JSON.stringify(args)}` : " "}`;
 				}
 				if (REPORTER == "SPEC") {
-					localStepName = `\t${localStepName} ${args[0] ? `with argument: ${JSON.stringify(args)}` : " "}`;
+					localStepName = `  ${localStepName} ${args[0] ? `with argument: \n  ${JSON.stringify(args)}` : " "}`;
 				}
 			}
 
@@ -68,9 +67,14 @@ function reporterStep(stepAssertionName, error, current, expected) {
 		step.step.stepResult.status = "passed";
 		return step.endStep();
 	}
-	// if (REPORTER == "SPEC") { // дописать отступы
-	// return stepAssertionName;
-	// }
+	if (REPORTER == "SPEC") {
+		const resultColor = error ? "fail" : "pass";
+		console.log(`  EXPECTED VALUE: ${color("pass", `${JSON.stringify(expected, null, 2)}`)}`);
+		console.log(`  CURRENT VALUE": ${color(resultColor, `${JSON.stringify(current, null, 2)}`)}`);
+		if (error) {
+			console.log(`  ERROR: ${color("diff added", `${JSON.stringify(error)}`)}`);
+		}
+	}
 }
 
 initStepDeclarator(reporterStep);

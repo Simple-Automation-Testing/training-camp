@@ -1,5 +1,5 @@
 async function attachSpecJsonData(title, data) {
-	console.log(`\n\t${title}: \n\t\t${JSON.stringify(data)}`);
+	console.log(`\t${title}: \n\t${JSON.stringify(data)}`);
 }
 
 async function stepSpec(name, cb) {
