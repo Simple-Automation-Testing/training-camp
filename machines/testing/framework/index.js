@@ -12,7 +12,6 @@ const provider = {
 	get testRunner() {
 		return {
 			it: wrappedIt,
-			//only: wrappedOnly,
 			beforeEach: wrappedBeforeEach,
 			afterEach: wrappedAfterEach,
 			beforeAll: wrappedBeforeAll,

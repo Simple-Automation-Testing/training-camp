@@ -14,7 +14,7 @@ describe("Tables sute", () => {
 	});
 
 	describe("Add new machine to table", () => {
-		it.only("should login as admin and add a new machine", async () => {
+		it("should login as admin and add a new machine", async () => {
 			const loginPage = new LoginPage();
 			await loginPage.open();
 			await loginPage.login({ name: "admin", password: "admin" });

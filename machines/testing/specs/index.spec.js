@@ -14,7 +14,7 @@ describe("Login sute", () => {
 	});
 
 	describe("Login to the app as exisitng user", async () => {
-		it.only("should login an exisiting user and redirect him to Tables page", async () => {
+		it("should login an exisiting user and redirect him to Tables page", async () => {
 			const loginPage = new LoginPage();
 			await loginPage.open();
 			await loginPage.login({ name: "admin", password: "admin" });
