@@ -18,7 +18,7 @@ import {
 } from '../reducer/machines'
 
 import {getMachinesApi, addMachineApi, removeMachineApi} from '../api'
-import {getItem} from '../helpers/local.storage'
+import {getItem, setItem} from '../helpers/local.storage'
 
 class SternMachineTable extends Component {
 
@@ -237,9 +237,9 @@ class SternMachineTable extends Component {
         }
         <div className="header">
           <h3>Таблиці, Привіт {user.username}</h3>
-          <Link to="/analytics"><button className="btn btn-primary">До аналітики</button></Link>
-          <Link to='/combaines'><button className="btn btn-primary">До комбайнів</button></Link>
-          {isAdmin && <Link to="/admin" target="_blank" rel="noopener noreferrer"><button className="btn btn-primary">До адмін кабінету</button></Link>}
+          <Link to="/analytics"><button className="btn btn-primary" onClick={ () => setItem('page', '/analytics')}>До аналітики</button></Link>
+          <Link to='/combaines'><button className="btn btn-primary" onClick={ () => setItem('page', '/combaines')}>До комбайнів</button></Link>
+          {isAdmin && <Link to="/admin" target="_blank" rel="noopener noreferrer"><button className="btn btn-primary" onClick={() => setItem('page', '/admin')}>До адмін кабінету</button></Link>}
           <button className="btn btn-primary logout" onClick={() => {
             localStorage.clear()
             window.history.go(0)

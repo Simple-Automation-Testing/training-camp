@@ -14,12 +14,14 @@ class Root extends Component {
 
   UNSAFE_componentWillMount() {
     const user = getItem('user')
+    const page = getItem('page')
     if(user) {
-      this.setState({...this.state, user})
+      this.setState({...this.state, user, page})
     }
   }
 
   state = {
+    page: null,
     user: null,
     view: 'login'
   }
@@ -77,10 +79,11 @@ class Root extends Component {
   }
 
   render() {
-    const {user, view} = this.state
+    const {user, view, page = '/tables'} = this.state
+    const redirectTo = page ? page : '/tables'
     return (
       <div id="main_page">
-        {user && <Redirect to="/tables" />}
+        {user && <Redirect to={redirectTo} />}
         {this.renderMainPageHeader()}
         {
           view === 'login'
