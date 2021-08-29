@@ -2,9 +2,8 @@ import React, {Component} from "react";
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import {getItem} from '../helpers/local.storage';
+import {getItem, setItem} from '../helpers/local.storage';
 import {getCombainesApi, getCombainesCountApi} from '../api';
-
 
 const styleScroll = {
   margin: '4px, 4px',
@@ -20,6 +19,10 @@ class CombainsTable extends Component {
     cursor: 0,
     machineCount: 0
   };
+
+  componentDidMount() {
+    document.title = 'Механізація Тваринництва - Комбайни'
+  }
 
   UNSAFE_componentWillMount() {
     getCombainesCountApi()
@@ -56,9 +59,9 @@ class CombainsTable extends Component {
         <div className="header" style={{position: 'fixed', width: '100%'}}>
           <div>
             <h3>Таблиці, Привіт {user.username}</h3>
-            <Link to="/analytics"><button className="btn btn-primary">До аналітики</button></Link>
-            <Link to='/combaines'><button className="btn btn-primary">До комбайнів</button></Link>
-            {isAdmin && <Link to="/admin"><button className="btn btn-primary">До адмін кабінету</button></Link>}
+            <Link to="/analytics" ><button className="btn btn-primary" onClick={() => setItem('page', '/analytics')}> До аналітики</button></Link>
+            <Link to='/tables'><button className="btn btn-primary" onClick={() => setItem('page', '/tables')}>До таблиць</button></Link>
+            {isAdmin && <Link to="/admin" target="_blank" rel="noopener noreferrer"><button className="btn btn-primary" onClick={() => setItem('page', '/admin')}>До адмін кабінету</button></Link>}
             <button className="btn btn-primary logout" onClick={() => {
               localStorage.clear()
               window.history.go(0)

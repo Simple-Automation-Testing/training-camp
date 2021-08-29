@@ -15,9 +15,14 @@ class Root extends Component {
   UNSAFE_componentWillMount() {
     const user = getItem('user')
     const page = getItem('page')
+    console.log(window.location.pathname, '0 !!!!!!!!!!!!!!!!!!!!');
     if(user) {
       this.setState({...this.state, user, page})
     }
+  }
+
+  componentWillMount() {
+    console.log(window.location.pathname, '0 !!!!!!!!!!!!!!!!!!!!');
   }
 
   state = {
@@ -54,7 +59,7 @@ class Root extends Component {
   }
 
   registerFormAction = async (user) => {
-    const err = {error: 'Користувач не може бути зареєстрований'};
+    const err = {error: 'Користувач не може бути зарегістрований'};
     const canTryRegister = user.username && user.password && user.email && user.name;
     if(!canTryRegister) {
       return err;

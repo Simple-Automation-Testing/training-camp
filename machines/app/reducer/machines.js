@@ -136,8 +136,9 @@ export default (state = initialState, action) => {
       })
       return {...state, sternMachines}
     }
-    case FILTER_DROP:
+    case FILTER_DROP: {
       return {...initialState}
+    }
     default:
       return state
   }

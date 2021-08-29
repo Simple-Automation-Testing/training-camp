@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
-import {Link, Red} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {AdminUserForm} from './components/admin.user.form';
 import {getItem} from '../helpers/local.storage';
 import {adminCreateUser, adminGetUserList} from '../api'
 
 class AdminPanel extends Component {
+
+  componentDidMount() {
+    document.title = 'Адмінська сторінка'
+  }
 
   state = {
     currendItem: null,
@@ -90,9 +93,6 @@ class AdminPanel extends Component {
         {!isAdmin && <Redirect to="/tables" />}
         <div className="header">
           <h3>Кабінет адміністратора, Привіт {user.username}</h3>
-          <Link to='/tables'><button className="btn btn-primary">До таблиць</button></Link>
-          <Link to='/analytics'><button className="btn btn-primary">До аналітики</button></Link>
-          <Link to='/combaines'><button className="btn btn-primary">До комбайнів</button></Link>
           <button className="btn btn-primary logout" onClick={() => {
             localStorage.clear()
             window.history.go(0)

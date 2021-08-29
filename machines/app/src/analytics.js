@@ -1,13 +1,17 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
-import {MachineModal} from './components/modal.machine'
-import {getItem} from '../helpers/local.storage'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
+import {MachineModal} from './components/modal.machine';
+import {getItem, setItem} from '../helpers/local.storage';
 
 class Analytics extends Component {
 
   state = {
     currendItem: null
+  }
+
+  componentDidMount() {
+    document.title = 'Механізація Тваринництва - Aналітика'
   }
 
   closeModal = () => {
@@ -66,9 +70,9 @@ class Analytics extends Component {
         {currendItem && <MachineModal item={currendItem} closeModal={this.closeModal} />}
         <div className="header">
           <h3>Аналітика, Привіт {user.username}</h3>
-          <Link to='/tables'><button className="btn btn-primary">До таблиць</button></Link>
-          <Link to='/combaines'><button className="btn btn-primary">До комбайнів</button></Link>
-          {isAdmin && <Link to="/admin"><button className="btn btn-primary">До адмін кабінету</button></Link>}
+          <Link to='/tables'><button className="btn btn-primary" onClick={() => setItem('page', '/tables')}>До таблиць</button></Link>
+          <Link to='/combaines'><button className="btn btn-primary" onClick={() => setItem('page', '/combaines')}>До комбайнів</button></Link>
+          {isAdmin && <Link to="/admin" target="_blank" rel="noopener noreferrer"><button className="btn btn-primary" onClick={() => setItem('page', '/admin')}>До адмін кабінету</button></Link>}
           <button className="btn btn-primary logout" onClick={() => {
             localStorage.clear()
             window.history.go(0)
@@ -81,13 +85,13 @@ class Analytics extends Component {
           </div>
           <div className="analytics_info_field alert alert-primary work_volume" role="alert">
             Робочий об'єм машин від
-          <span className="interactable_text" onClick={() => this.findItemBy('work_volume')(WVmin)}> {WVmin} </span>  до
-          <span className="interactable_text" onClick={() => this.findItemBy('work_volume')(WVmax)}> {WVmax} </span>
+            <span className="interactable_text" onClick={() => this.findItemBy('work_volume')(WVmin)}> {WVmin} </span>  до
+            <span className="interactable_text" onClick={() => this.findItemBy('work_volume')(WVmax)}> {WVmax} </span>
           </div>
           <div className="analytics_info_field alert alert-primary price" role="alert">
             Ціни від
-          <span className="interactable_text" onClick={() => this.findItemBy('price')(Pmin)}> {Pmin} </span>  до
-          <span className="interactable_text" onClick={() => this.findItemBy('price')(Pmax)}> {Pmax} </span>
+            <span className="interactable_text" onClick={() => this.findItemBy('price')(Pmin)}> {Pmin} </span>  до
+            <span className="interactable_text" onClick={() => this.findItemBy('price')(Pmax)}> {Pmax} </span>
           </div>
         </div>
       </div>

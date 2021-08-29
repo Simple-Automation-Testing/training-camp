@@ -22,6 +22,10 @@ import {getItem, setItem} from '../helpers/local.storage'
 
 class SternMachineTable extends Component {
 
+  componentDidMount() {
+    document.title = 'Механізація Тваринництва - Машини'
+  }
+
   UNSAFE_componentWillMount() {
     const {dispatch} = this.props
     getMachinesApi()
@@ -84,8 +88,10 @@ class SternMachineTable extends Component {
   }
 
   initFilter = () => {
+    console.log('here')
     const {dispatch} = this.props
     const {name, volume, price} = this.state
+    console.log(name, volume, price, !price && !volume && !name)
     if(!!name) {
       dispatch(filterName({value: name}))
     } else if(!!volume) {
@@ -93,7 +99,8 @@ class SternMachineTable extends Component {
     } else if(!!price) {
       dispatch(filterPrice({value: price}))
     } else if(!price && !volume && !name) {
-      dispatch(filterDrop())
+      getMachinesApi()
+        .then((machines) => dispatch(initMachines(machines)))
     }
   }
 
@@ -214,9 +221,9 @@ class SternMachineTable extends Component {
                 return <div className="alternative-seller" onClick={(e) => {
                   e.preventDefault()
                   e.stopPropagation()
-                  this.renderItem({...item, alternativeSeller: alternativeSeller.seller, price: item.price - (item.price/100 * alternativeSeller.discount), discount: alternativeSeller.discount})
+                  this.renderItem({...item, alternativeSeller: alternativeSeller.seller, price: item.price - (item.price / 100 * alternativeSeller.discount), discount: alternativeSeller.discount})
                 }}>Продавець:{<span className="alternative-seller-name">{alternativeSeller.seller}</span>} | Знижка:{<span className="alternative-seller-discount">{alternativeSeller.discount}</span>} %</div>
-            })}</div>}
+              })}</div>}
           </td>
           <td style={{width: '13%'}} className="active volume">{item.work_volume}</td>
           <td style={{width: '13%'}} className="active">{item.L}</td>
@@ -237,8 +244,8 @@ class SternMachineTable extends Component {
         }
         <div className="header">
           <h3>Таблиці, Привіт {user.username}</h3>
-          <Link to="/analytics"><button className="btn btn-primary" onClick={ () => setItem('page', '/analytics')}>До аналітики</button></Link>
-          <Link to='/combaines'><button className="btn btn-primary" onClick={ () => setItem('page', '/combaines')}>До комбайнів</button></Link>
+          <Link to="/analytics"><button className="btn btn-primary" onClick={() => setItem('page', '/analytics')}>До аналітики</button></Link>
+          <Link to='/combaines'><button className="btn btn-primary" onClick={() => setItem('page', '/combaines')}>До комбайнів</button></Link>
           {isAdmin && <Link to="/admin" target="_blank" rel="noopener noreferrer"><button className="btn btn-primary" onClick={() => setItem('page', '/admin')}>До адмін кабінету</button></Link>}
           <button className="btn btn-primary logout" onClick={() => {
             localStorage.clear()
