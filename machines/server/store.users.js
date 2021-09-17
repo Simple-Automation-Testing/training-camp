@@ -1,15 +1,16 @@
-const users = [
-  {
-    username: 'admin',
-    password: 'admin',
-    email: 'admin@admin.com',
-    name: 'admin',
-    isAdmin: true
-  }
-];
+const {getRandomString} = require('sat-utils');
+
+const users = [{
+  userId: '1',
+  username: 'admin',
+  password: 'admin',
+  email: 'admin@admin.com',
+  name: 'admin',
+  isAdmin: true
+}];
 
 function login(user) {
-  return users.some(u => Object.keys(user).every(k => u[k] === user[k]));
+  return users.find(u => Object.keys(user).every(k => u[k] === user[k]));
 }
 
 function isAdmin(user) {
@@ -24,7 +25,7 @@ function getUsersList() {
 }
 
 function register(user) {
-  users.push(user);
+  users.push({...user, userId: getRandomString(12)});
   return true;
 }
 

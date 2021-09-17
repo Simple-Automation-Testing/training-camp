@@ -1,0 +1,15 @@
+.message_body_content {
+	margin-left: 20px;
+}
+
+.message_body .user_name {
+	font-weight: bold;
+}
+
+.message_body.my {
+	text-align: right;
+}
+
+.message_body.reply {
+	text-align: left;
+}

@@ -7,7 +7,6 @@ import {
   filterName,
   filterVolume,
   filterPrice,
-  filterDrop,
   sortBrandAZ,
   sortBrandZA,
   sortPriceFormHight,
@@ -30,9 +29,21 @@ class SternMachineTable extends Component {
     const {dispatch} = this.props
     getMachinesApi()
       .then((machines) => dispatch(initMachines(machines)))
+
+    setTimeout(() => {
+      const isAdmin = getItem('isAdmin')
+      this.setState({isAdmin})
+    }, 2000)
+    setTimeout(() => {
+      const user = getItem('user')
+      const isAdmin = getItem('isAdmin')
+      this.setState({greetingMessage: `Таблиці, Привіт ${user.username}`, isAdmin})
+    }, 5000)
   }
 
   state = {
+    greetingMessage: dayjs().format('YYYY-MM-DD'),
+    isAdmin: false,
     name: '',
     volume: '',
     price: '',
@@ -201,15 +212,12 @@ class SternMachineTable extends Component {
   }
 
   render() {
-    const {currendItem} = this.state
+    const {currendItem, greetingMessage, isAdmin} = this.state
     const {sternMachines} = this.props
     // this should be refactored
-    const isAdmin = getItem('isAdmin')
-    const user = getItem('user')
     const table = sternMachines.map((item, index) => {
       return (
         <tr key={index} onClick={() => {
-          console.log('FIrst')
           this.renderItem(item)
         }}>
           <td style={{width: '20%'}} className="active brand">
@@ -217,8 +225,8 @@ class SternMachineTable extends Component {
             {item.addedDate && <div className="start-sell-date">Дата старту продажу: <span>{dayjs(item.addedDate).format('YYYY-MM-DD')}</span></div>}
             {item.seller && <div className="seller">Продавець <span>{item.seller}</span></div>}
             {(item.alternativeSellers && item.alternativeSellers.length) && <div className="alternative-sellers"><span>Альтернативні пропозиції: </span>
-              {item.alternativeSellers.map((alternativeSeller) => {
-                return <div className="alternative-seller" onClick={(e) => {
+              {item.alternativeSellers.map((alternativeSeller, index) => {
+                return <div key={index} className="alternative-seller" onClick={(e) => {
                   e.preventDefault()
                   e.stopPropagation()
                   this.renderItem({...item, alternativeSeller: alternativeSeller.seller, price: item.price - (item.price / 100 * alternativeSeller.discount), discount: alternativeSeller.discount})
@@ -243,7 +251,7 @@ class SternMachineTable extends Component {
           </MachineModal>
         }
         <div className="header">
-          <h3>Таблиці, Привіт {user.username}</h3>
+          <h3>{greetingMessage}{ isAdmin && <span>*</span>}</h3>
           <Link to="/analytics"><button className="btn btn-primary" onClick={() => setItem('page', '/analytics')}>До аналітики</button></Link>
           <Link to='/combaines'><button className="btn btn-primary" onClick={() => setItem('page', '/combaines')}>До комбайнів</button></Link>
           {isAdmin && <Link to="/admin" target="_blank" rel="noopener noreferrer"><button className="btn btn-primary" onClick={() => setItem('page', '/admin')}>До адмін кабінету</button></Link>}

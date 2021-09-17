@@ -1,5 +1,4 @@
 function setItem(k, i) {
-  console.log('!!!!!!!!!!!!!!!!', k, i)
   localStorage.setItem(k, JSON.stringify(i))
 }
 

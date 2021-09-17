@@ -1,3 +1,4 @@
+// @ts-check
 // this is temp hardcoded data
 const sternMachines = require('./noop_storage/machines.json')
 

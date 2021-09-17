@@ -11,7 +11,7 @@
     "backend:test": "node ./server/index.js",
     "backend:dev": "nodemon ./server/index.js",
     "build": "webpack --production",
-    "build:image": "webpack --production && docker build -t potapovdim/application:v3 -f ./docker/Dockerfile .",
+    "build:image": "webpack --production && docker build -t potapovdim/application:v4 -f ./docker/Dockerfile .",
     "test:mocha-allure": "REPORTER=ALLURE mocha",
     "test:mocha-spec": "REPORTER=SPEC mocha ./testing/**/*.spec.js --reporter spec",
     "test:mocha-custom": "REPORTER=SPEC mocha ./testing/**/*.spec.js --reporter ./testing/lib/report/spec-custom.js",

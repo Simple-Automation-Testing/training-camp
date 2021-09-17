@@ -2,12 +2,22 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {AdminUserForm} from './components/admin.user.form';
 import {getItem} from '../helpers/local.storage';
-import {adminCreateUser, adminGetUserList} from '../api'
+import {adminCreateUser, adminGetUserList, adminMessagesList} from '../api'
+import {MessageModal} from './components/modal.message'
 
 class AdminPanel extends Component {
 
   componentDidMount() {
     document.title = 'Адмінська сторінка'
+  }
+
+  closeMessageForm = () => {
+    this.setState({...this.state, messageForm: null});
+  }
+
+  openMessageForm = async () => {
+    const messages = await adminMessagesList();
+    this.setState({...this.state, messageForm: true, messages});
   }
 
   state = {
@@ -70,7 +80,7 @@ class AdminPanel extends Component {
   }
 
   render() {
-    const {view, registerError, userList, currentItem} = this.state;
+    const {view, registerError, userList, currentItem, messageForm, messages = []} = this.state;
     const user = getItem('user');
     const isAdmin = getItem('isAdmin');
 
@@ -87,9 +97,17 @@ class AdminPanel extends Component {
       const {currentItem} = this.state;
       return <AdminUserForm {...currentItem} />
     }
-
+    const userId = getItem('userId');
+    console.log(messages)
     return (
       <div id="admin_page">
+        {messageForm && <MessageModal
+          name={user.username}
+          closeModal={this.closeMessageForm}
+          messages={messages}
+          sendMessage={this.sendMessage}
+          userId={userId}
+        />}
         {!isAdmin && <Redirect to="/tables" />}
         <div className="header">
           <h3>Кабінет адміністратора, Привіт {user.username}</h3>
@@ -124,6 +142,7 @@ class AdminPanel extends Component {
             {currentItem && <div className="details">{renderUserDetails()}</div>}
           </div>
         }
+        <div><button className="btn btn-secondary chat_button" onClick={this.openMessageForm} >Переглянути чат</button></div>
       </div>
     )
   }

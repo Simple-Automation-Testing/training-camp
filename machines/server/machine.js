@@ -1,10 +1,10 @@
+// @ts-check
 const {addMachine, removeMachine, getMachines} = require('./store.machines');
 
 function initMachinesPart(router) {
   router.get('/get_machines', async (ctx) => {
     ctx.header['Content-Type'] = 'application/json';
     // set json header
-    const queries = ctx.request.queries
     ctx.status = 200;
     ctx.body = getMachines();
     return ctx;

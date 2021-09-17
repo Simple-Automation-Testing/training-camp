@@ -1,3 +1,4 @@
+// @ts-check
 // this is temp hardcoded data
 const combaines = require('./noop_storage/combaines.json')
 

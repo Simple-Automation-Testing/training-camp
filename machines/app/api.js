@@ -9,6 +9,23 @@ async function loginApi(user) {
   return resp
 }
 
+async function startMessagesSession() {
+  const resp = await fetch(`${origin}/messages_start`, {
+    headers: {'Content-Type': 'application/json'},
+    method: 'GET',
+  }).then(r => r.json()).catch((e) => e)
+  return resp
+}
+
+async function sendMessage(body) {
+  const resp = await fetch(`${origin}/add_message`, {
+    headers: {'Content-Type': 'application/json'},
+    method: 'POST',
+    body: JSON.stringify(body),
+  }).then(r => r.json()).catch((e) => e)
+  return resp
+}
+
 async function registerApi(user) {
   const resp = await fetch(`${origin}/register`, {
     headers: {'Content-Type': 'application/json'},
@@ -70,6 +87,15 @@ async function adminGetUserList(admin) {
   return resp
 }
 
+async function adminMessagesList({sessionId} = {}) {
+  const resp = await fetch(`${origin}/get_messages`, {
+    headers: {'Content-Type': 'application/json'},
+    method: 'POST',
+    body: JSON.stringify({sessionId})
+  }).then(r => r.json()).catch((e) => e)
+  return resp
+}
+
 
 async function addCombaineApi(machine) {
   const resp = await fetch(`${origin}/add_combaine`, {
@@ -116,5 +142,9 @@ export {
   addCombaineApi,
   getCombainesApi,
   removeCombaineApi,
-  getCombainesCountApi
+  getCombainesCountApi,
+  // MESSAGES
+  startMessagesSession,
+  sendMessage,
+  adminMessagesList,
 }

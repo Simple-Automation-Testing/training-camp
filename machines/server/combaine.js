@@ -1,3 +1,4 @@
+// @ts-check
 const {addCombaine, removeCombaine, getCombaines, getCombainesCount} = require('./store.combaines');
 
 

@@ -1,38 +1,67 @@
+import {getRandomString} from 'sat-utils'
 import React, {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import {InitialForm} from './src/action.form'
 import {InitialFormModern} from './src/action.form.new';
-import {loginApi, registerApi, userIsAdminApi} from './api'
+import {loginApi, registerApi, userIsAdminApi, startMessagesSession, sendMessage} from './api'
 import {setItem, getItem} from './helpers/local.storage'
+import {MessageModal} from './src/components/modal.message'
 
-
-// console.log(process.env.FORM)
 const ActionForm = process.env.FORM === 'modern' ? InitialFormModern : InitialForm;
 
 
 class Root extends Component {
-
   UNSAFE_componentWillMount() {
-    const user = getItem('user')
-    const page = getItem('page')
-    console.log(window.location.pathname, '0 !!!!!!!!!!!!!!!!!!!!');
+    const user = getItem('user');
+    const page = getItem('page');
+    const userId = getItem('userId');
+
+    if(!userId) {
+      setItem('userId', 'unregistered_user');
+    }
+
     if(user) {
       this.setState({...this.state, user, page})
     }
   }
 
-  componentWillMount() {
-    console.log(window.location.pathname, '0 !!!!!!!!!!!!!!!!!!!!');
-  }
-
   state = {
     page: null,
     user: null,
-    view: 'login'
+    view: 'login',
+    messageForm: null
+  }
+
+  sendMessage = async ({userName, content}) => {
+    const userId = getItem('userId');
+    const sessionId  = getItem('sessionId')
+    const id = getRandomString(15);
+    const replyUserId = null;
+    const messages = await sendMessage({
+      sessionId, message: {
+        userId,
+        id,
+        replyUserId,
+        userName,
+        content,
+      }
+    });
+    console.log(messages)
+    this.setState({...this.state, messages});
   }
 
   updateView = (view) => {
     this.setState({...this.state, view})
+  }
+
+  closeMessageForm = () => {
+    this.setState({...this.state, messageForm: null});
+  }
+
+  openMessageForm = async () => {
+    this.setState({...this.state, messageForm: true});
+    const {sessionId} = await startMessagesSession();
+    setItem('sessionId', sessionId)
   }
 
   login = (user) => {
@@ -48,10 +77,11 @@ class Root extends Component {
     }
 
     const result = await loginApi(user)
-    if(result === true) {
+    if(result) {
       const isAdmin = await userIsAdminApi(user)
       setItem('user', user);
       setItem('isAdmin', isAdmin);
+      setItem('userId', result.userId);
       this.login(user);
     } else {
       return err;
@@ -84,10 +114,17 @@ class Root extends Component {
   }
 
   render() {
-    const {user, view, page = '/tables'} = this.state
+    const {user, view, page = '/tables', messageForm, messages} = this.state
     const redirectTo = page ? page : '/tables'
+    const userId = getItem('userId');
     return (
       <div id="main_page">
+        {messageForm && <MessageModal
+          closeModal={this.closeMessageForm}
+          messages={messages}
+          sendMessage={this.sendMessage}
+          userId={userId}
+        />}
         {user && <Redirect to={redirectTo} />}
         {this.renderMainPageHeader()}
         {
@@ -104,6 +141,7 @@ class Root extends Component {
               actionMessage={'Зареєструватися'}
             />
         }
+        <div><button className="btn btn-secondary chat_button" onClick={this.openMessageForm} >Надіслати відгук </button></div>
       </div>
     )
   }
