@@ -1,4 +1,4 @@
-const {getRandomString} = require('sat-utils');
+const {getRandomString, isArray} = require('sat-utils');
 /**
  * @typedef {object} message
  * @property {string} id id
@@ -24,7 +24,14 @@ function getMessages({sessionId, offset = 0} = {}) {
 }
 
 function getSessions() {
-  return Object.keys(sessions);
+  const sessionsKeys = Object.keys(sessions);
+  return sessionsKeys.map((sessionId) => {
+    const item = sessions[sessionId].find((item) => item.userName !== 'admin');
+    if(item) {
+      return {sessionId, userName: item.userName};
+    }
+    return {sessionId,  userName: 'Not found'}
+  })
 }
 
 function startSession() {
@@ -51,6 +58,15 @@ function removeMessage(message) {
   }
   return messages
 }
+
+setInterval(() => {
+  Object.keys(sessions).forEach((session) => {
+    if(isArray(sessions[session])) {
+      messages.push(...sessions[session])
+      delete sessions[session];
+    }
+  })
+}, 10 * 60 * 1000)
 
 module.exports = {
   addMessage,

@@ -44,7 +44,11 @@ class AdminPanel extends Component {
     this.setState({...this.state, messages});
   }
 
-
+  refreshMessages = async () => {
+    const sessionId = getItem('sessionId');
+    const messages = await getMessagesList({sessionId});
+    this.setState({...this.state, messages});
+  }
 
   state = {
     currendItem: null,
@@ -67,10 +71,6 @@ class AdminPanel extends Component {
 
   openCreateNewUser = () => {
     this.setState({...this.state, view: 'newUser'})
-  }
-
-  adminGetSessions = async () => {
-    const sessions = await getSessions()
   }
 
   createNewUser = () => {
@@ -139,6 +139,7 @@ class AdminPanel extends Component {
           userId={userId}
           sessions={sessions}
           chooseSession={this.openMessageThread}
+          refresh={this.refreshMessages}
         />}
         {!isAdmin && <Redirect to="/tables" />}
         <div className="header">

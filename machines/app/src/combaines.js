@@ -72,7 +72,6 @@ class CombainsTable extends Component {
         <div>
           <InfiniteScroll
             onScroll={(e) => {
-              console.log('here');
               e.stopPropagation()
             }}
             dataLength={this.state.items.length}

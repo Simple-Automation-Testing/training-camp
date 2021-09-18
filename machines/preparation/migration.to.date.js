@@ -25,7 +25,6 @@ const combainesStorage = path.resolve(__dirname, '../server/noop_storage/combain
 const machinesStorage = path.resolve(__dirname, '../server/noop_storage/machines.json')
 
 const machinesWithDate = require(machinesStorage).map((machine) => {
-  console.log(sellers[getRandomArbitrary(0,5)], getRandomArbitrary(0,5))
   return {
     ...machine, addedDate: getRandomDayBefore(), seller: sellers[getRandomArbitrary(0, 5)],
     price: Math.floor(machine.price),

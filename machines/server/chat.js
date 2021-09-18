@@ -14,7 +14,6 @@ function initMessagesPart(router) {
     ctx.header['Content-Type'] = 'application/json';
     // set json header
     ctx.status = 200;
-    console.log(ctx.request.body)
     ctx.body = getMessages(ctx.request.body);
     return ctx;
   });

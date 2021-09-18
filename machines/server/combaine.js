@@ -6,7 +6,6 @@ function initCombainePart(router) {
   router.get('/get_combaines', async (ctx) => {
     ctx.header['Content-Type'] = 'application/json';
 
-    console.log(ctx.request.query)
     // set json header
     ctx.status = 200;
     ctx.body = getCombaines(ctx.request.query);
@@ -16,7 +15,6 @@ function initCombainePart(router) {
   router.get('/get_combaines_count', async (ctx) => {
     ctx.header['Content-Type'] = 'application/json';
 
-    console.log(ctx.request.query)
     // set json header
     ctx.status = 200;
     ctx.body = getCombainesCount();

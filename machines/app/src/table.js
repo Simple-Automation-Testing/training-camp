@@ -99,10 +99,8 @@ class SternMachineTable extends Component {
   }
 
   initFilter = () => {
-    console.log('here')
     const {dispatch} = this.props
-    const {name, volume, price} = this.state
-    console.log(name, volume, price, !price && !volume && !name)
+    const {name, volume, price} = this.state;
     if(!!name) {
       dispatch(filterName({value: name}))
     } else if(!!volume) {

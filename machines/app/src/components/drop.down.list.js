@@ -12,7 +12,6 @@ class DropDownList extends Component {
   selectOption = (option) => {
     const {onSelect} = this.props;
     onSelect(option);
-    console.log()
     this.setState({open: false})
   }
 
@@ -20,11 +19,9 @@ class DropDownList extends Component {
     const {currentSelected = 'Виберіть варіант',  options, className} = this.props
     const {open} = this.state
     const classNames = classnames('dropdown', className);
-    console.log(open)
+
     return (
       <div className={classNames}>
-
-
         <button className="btn btn-secondary dropdown-toggle" type="button"
           id="dropdownMenu2"
           onClick={this.openList}
