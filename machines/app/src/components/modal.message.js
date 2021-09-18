@@ -4,17 +4,22 @@ import {MessageItem} from './message';
 
 import './style/message.scss'
 
-const MessageModal = ({name, messages = [], closeModal, sendMessage, userId}) => {
+const MessageModal = ({name, userId, messages, closeModal, sendMessage, refresh, sessions, chooseSession}) => {
   const [messageContent, updateContent] = useState('');
   const [userName, updateName] = useState(name);
   const [fieldUserName, setName] = useState(name);
+
   console.log(fieldUserName)
+
   return (
     <div className="modal_wrapper message_modal">
       <div className="modal">
         <Close onClick={closeModal} />
         <div className="messages_list">
-          {messages.map((message, index) => {
+          {sessions && sessions.map((session, index) => {
+            return <div key={index}><button onClick={() => chooseSession(session)}>{session}</button> </div>
+          })}
+          {messages && messages.map((message, index) => {
             const isMyMessage = userId === message.userId;
             console.log(userId, message.userId);
             return (<MessageItem key={index} isMyMessage={isMyMessage} {...message} />)
@@ -27,7 +32,7 @@ const MessageModal = ({name, messages = [], closeModal, sendMessage, userId}) =>
               onBlur={() => setName(userName)} disabled={fieldUserName}
               value={fieldUserName}
             />
-            <button>Оновити</button>
+            <button onClick={refresh}>Оновити</button>
           </div>
           <div className="modal_content message_content">
             <input onChange={({target: {value}}) => updateContent(value)} value={messageContent} />

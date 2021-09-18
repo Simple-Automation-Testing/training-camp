@@ -13,13 +13,18 @@ const sessions = {};
 
 function getMessages({sessionId, offset = 0} = {}) {
   sessionId = sessionId || Object.keys(sessions)[0];
-  console.log(sessionId)
+
   if(!sessionId) {
     return [];
   }
-  const data = [...sessions[sessionId]].splice(+offset, sessions[sessionId].length)
-  console.log(data, sessions, sessions[sessionId])
+  const sessionData = sessions[sessionId] || [];
+  const data = [...sessionData].splice(+offset, sessionData.length)
+
   return data
+}
+
+function getSessions() {
+  return Object.keys(sessions);
 }
 
 function startSession() {
@@ -53,4 +58,5 @@ module.exports = {
   getMessagesCount,
   removeMessage,
   startSession,
+  getSessions,
 }

@@ -87,11 +87,19 @@ async function adminGetUserList(admin) {
   return resp
 }
 
-async function adminMessagesList({sessionId} = {}) {
+async function getMessagesList({sessionId} = {}) {
   const resp = await fetch(`${origin}/get_messages`, {
     headers: {'Content-Type': 'application/json'},
     method: 'POST',
     body: JSON.stringify({sessionId})
+  }).then(r => r.json()).catch((e) => e)
+  return resp
+}
+
+async function getSessions() {
+  const resp = await fetch(`${origin}/get_sessions`, {
+    headers: {'Content-Type': 'application/json'},
+    method: 'GET',
   }).then(r => r.json()).catch((e) => e)
   return resp
 }
@@ -146,5 +154,6 @@ export {
   // MESSAGES
   startMessagesSession,
   sendMessage,
-  adminMessagesList,
+  getMessagesList,
+  getSessions,
 }

@@ -1,5 +1,5 @@
 // @ts-check
-const {addMessage, removeMessage, getMessages, startSession} = require('./store.chat');
+const {addMessage, removeMessage, getMessages, startSession, getSessions} = require('./store.chat');
 
 function initMessagesPart(router) {
   router.get('/messages_start', async (ctx) => {
@@ -16,6 +16,14 @@ function initMessagesPart(router) {
     ctx.status = 200;
     console.log(ctx.request.body)
     ctx.body = getMessages(ctx.request.body);
+    return ctx;
+  });
+
+  router.get('/get_sessions', async (ctx) => {
+    ctx.header['Content-Type'] = 'application/json';
+    // set json header
+    ctx.status = 200;
+    ctx.body = getSessions();
     return ctx;
   });
 

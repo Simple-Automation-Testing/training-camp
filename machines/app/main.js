@@ -3,11 +3,12 @@ import React, {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import {InitialForm} from './src/action.form'
 import {InitialFormModern} from './src/action.form.new';
-import {loginApi, registerApi, userIsAdminApi, startMessagesSession, sendMessage} from './api'
+import {loginApi, registerApi, userIsAdminApi, startMessagesSession, sendMessage, getMessagesList} from './api'
 import {setItem, getItem} from './helpers/local.storage'
 import {MessageModal} from './src/components/modal.message'
 
 const ActionForm = process.env.FORM === 'modern' ? InitialFormModern : InitialForm;
+let intervalItem = null;
 
 
 class Root extends Component {
@@ -46,8 +47,23 @@ class Root extends Component {
         content,
       }
     });
-    console.log(messages)
     this.setState({...this.state, messages});
+  }
+
+  refreshMessages = async () => {
+    const {startAutoRefresh} = this.setState;
+    if(startAutoRefresh) {
+      clearInterval(intervalItem)
+      this.setState({...this.state, startAutoRefresh: !startAutoRefresh});
+    } else {
+      this.setState({...this.state, startAutoRefresh: !startAutoRefresh});
+
+      intervalItem = setInterval(async () => {
+        const sessionId = getItem('sessionId');
+        const messages = await getMessagesList({sessionId});
+        this.setState({...this.state, messages});
+     }, 500)
+    }
   }
 
   updateView = (view) => {
@@ -124,6 +140,7 @@ class Root extends Component {
           messages={messages}
           sendMessage={this.sendMessage}
           userId={userId}
+          refresh={this.refreshMessages}
         />}
         {user && <Redirect to={redirectTo} />}
         {this.renderMainPageHeader()}

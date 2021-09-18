@@ -1,8 +1,9 @@
+import {getRandomString} from 'sat-utils'
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {AdminUserForm} from './components/admin.user.form';
-import {getItem} from '../helpers/local.storage';
-import {adminCreateUser, adminGetUserList, adminMessagesList} from '../api'
+import {getItem, setItem} from '../helpers/local.storage';
+import {adminCreateUser, adminGetUserList, getMessagesList, getSessions, sendMessage} from '../api'
 import {MessageModal} from './components/modal.message'
 
 class AdminPanel extends Component {
@@ -16,9 +17,34 @@ class AdminPanel extends Component {
   }
 
   openMessageForm = async () => {
-    const messages = await adminMessagesList();
-    this.setState({...this.state, messageForm: true, messages});
+    const sessions = await getSessions();
+    this.setState({...this.state, messageForm: true, sessions});
   }
+
+  openMessageThread = async (sessionId) => {
+    setItem('sessionId', sessionId)
+    const messages = await getMessagesList({sessionId});
+    this.setState({...this.state, messages, sessions: null});
+  }
+
+  sendMessage = async ({userName, content}) => {
+    const userId = getItem('userId');
+    const sessionId = getItem('sessionId')
+    const id = getRandomString(15);
+    const replyUserId = null;
+    const messages = await sendMessage({
+      sessionId, message: {
+        userId,
+        id,
+        replyUserId,
+        userName,
+        content,
+      }
+    });
+    this.setState({...this.state, messages});
+  }
+
+
 
   state = {
     currendItem: null,
@@ -41,6 +67,10 @@ class AdminPanel extends Component {
 
   openCreateNewUser = () => {
     this.setState({...this.state, view: 'newUser'})
+  }
+
+  adminGetSessions = async () => {
+    const sessions = await getSessions()
   }
 
   createNewUser = () => {
@@ -80,7 +110,7 @@ class AdminPanel extends Component {
   }
 
   render() {
-    const {view, registerError, userList, currentItem, messageForm, messages = []} = this.state;
+    const {view, registerError, userList, currentItem, messageForm, messages = [], sessions} = this.state;
     const user = getItem('user');
     const isAdmin = getItem('isAdmin');
 
@@ -98,7 +128,7 @@ class AdminPanel extends Component {
       return <AdminUserForm {...currentItem} />
     }
     const userId = getItem('userId');
-    console.log(messages)
+
     return (
       <div id="admin_page">
         {messageForm && <MessageModal
@@ -107,6 +137,8 @@ class AdminPanel extends Component {
           messages={messages}
           sendMessage={this.sendMessage}
           userId={userId}
+          sessions={sessions}
+          chooseSession={this.openMessageThread}
         />}
         {!isAdmin && <Redirect to="/tables" />}
         <div className="header">
